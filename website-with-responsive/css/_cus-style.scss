@@ -1,0 +1,437 @@
+
+.p-120 {
+    padding: 120px !important;
+}
+
+.mt-120 {
+    margin-top: 60px !important;
+}
+
+/* Layout */
+.image-area {
+    width: 50%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.content-area {
+    width: 50%;
+    padding: 80px 60px;
+}
+
+/* Headings */
+.subtitle {
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+.large-head {
+    font-size: 95px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+    font-weight: normal;
+    overflow: hidden;
+    padding-right: 25px;
+}
+
+.word {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* Feature image */
+
+.why-us-section .row {
+  align-items: stretch;
+}
+
+
+.image-col {
+  position: relative;
+  overflow: hidden;
+}
+
+#featureImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: translateZ(0);
+  will-change: opacity;
+}
+// .accordion-collapse {
+//   transition: none !important;
+// }
+/* Accordion */
+.accordion-item {
+    border-bottom: 1px solid #333;
+    padding: 50px 0;
+
+    @media (max-width:767px)  {
+        padding: 30px 0;
+        
+    }
+}
+
+.accordion-header {
+    width: 100%;
+    background: none;
+    color: #fff;
+    font-size: 23px;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    padding: 0 !important;
+}
+
+.accordion-body {
+    margin-top: 30px;
+    color: #ccc;
+    font-size: 16px;
+    padding: 0 !important;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+
+.acc-content {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.accordion-button {
+    padding: 0 !important;
+
+    &:not(.collapsed) {
+        box-shadow: none !important;
+    }
+
+    &::after {
+        filter: invert(1);
+    }
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+/* Technologies */
+.our-technolagies {
+    padding: 150px 0;
+
+    .our-tec-logo{
+        margin-top: 120px;
+        @media (max-width:1280px) {
+            margin-top: 80px;
+            
+        }
+        @media (max-width:767px) {
+            margin-top: 50px;
+            
+        }
+    }
+}
+
+.main-head {
+    font-size: 95px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #1d212d;
+    font-weight: normal;
+}
+
+.sub-text {
+    font-size: 22px;
+    color: #82879a;
+    margin-bottom: 60px;
+    line-height: 1.6;
+}
+
+.tech-logos {
+    perspective: 1200px;
+}
+
+.logo-stack {
+    width: 120px;
+    height: 80px;
+
+    img {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Interactive section */
+.interactive-section {
+    position: relative;
+    cursor: pointer;
+
+    a,
+    button {
+        cursor: pointer;
+    }
+}
+
+.bg-blue {
+    background-color: #022f8e;
+}
+
+.marquee-text {
+    gap: 80px;
+    white-space: nowrap;
+    font-size: 64px;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Custom cursor */
+.custom-cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    opacity: 0;
+    mix-blend-mode: difference;
+
+    svg path {
+        stroke: #ffffff;
+    }
+}
+
+.bookcall-text {
+    font-size: 95px;
+    font-weight: 400;
+    color: #fff;
+    padding: 50px 0;
+}
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: inline-flex;
+  width: max-content;
+  white-space: nowrap;
+  will-change: transform;
+  gap: 90px;
+  @media (max-width:767px) {
+    gap: 50px;
+    
+  }
+}
+
+// .marquee-track span {
+//   margin-right: 68px; 
+ 
+// }
+
+.divider {
+    height: 1px;
+    background-color: #fff;
+}
+
+/* Footer */
+.footer {
+    background-color: #0c0d14;
+    color: #ffffff;
+    padding: 80px 0;
+    font-size: 14px;
+    @media (max-width:1366px) 
+    {
+        padding: 60px 0;
+        
+    }
+    @media (max-width:767px) {
+        padding: 40px 0;
+        
+    }
+    
+
+    h6 {
+        color: #fff;
+        margin-bottom: 20px;
+        font-weight: 400;
+        font-size: 18px;
+
+        @media (max-width:767px) {
+            font-size: 15px;
+            
+        }
+    }
+
+    a {
+        color: #aaa;
+        text-decoration: none;
+
+        &:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+
+    .footer-item {
+        padding-left: 0;
+
+        li {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 0;
+
+            a {
+                color: #80848d;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .social-icons a {
+        display: inline-block;
+        margin-right: 10px;
+        color: #aaa;
+        background: #171A24;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            color: #fff;
+        }
+        @media (max-width:1199px) {
+            width: 45px;
+            height: 45px;
+            
+        }
+    }
+
+    hr {
+        border-color: #333;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 1650px) {
+    .p-120 {
+        padding: 55px 80px !important;
+    }
+
+    .bookcall-text {
+        font-size: 70px;
+        padding: 40px 0 !important;
+    }
+    .large-head {
+        font-size: 83px;
+    }
+    .accordion-item {
+        padding: 40px 0;
+    }
+    .accordion-body{
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 1440px) {
+    .p-120 {
+        padding:60px 60px !important;
+    }
+
+    .large-head,
+    .main-head {
+        font-size: 75px;
+    }
+
+    .mt-120 {
+        margin-top: 80px !important;
+    }
+
+    .our-technolagies {
+        padding: 90px 0;
+    }
+}
+
+@media (max-width: 1280px) {
+
+    .mt-120 {
+        margin-top: 50px !important;
+    }
+
+    .main-head {
+        font-size: 55px;
+    }
+
+    .our-technolagies {
+        padding: 70px 0;
+    }
+
+    .bookcall-text {
+        font-size: 30px;
+        padding: 20px 0 !important;
+    }
+}
+
+@media (max-width: 767px) {
+    #featureImage {
+        max-height: 100%;
+        height: auto;
+        display: none;
+    }
+
+    .mt-120 {
+        margin-top: 30px !important;
+    }
+
+    .our-technolagies {
+        padding: 40px 0;
+    }
+
+    .main-head {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    .sub-text {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .our-tec-logo {
+        flex-direction: column;
+    }
+
+    .large-head {
+        font-size: 40px;
+        padding-right: 0;
+    }
+
+    .footer {
+        padding: 30px 0;
+    }
+
+    .bookcall-text {
+        font-size: 40px;
+       ;
+    }
+
+    .p-120 {
+        padding: 15px 15px !important;
+    }
+}

@@ -1,0 +1,1287 @@
+.video-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.video-section .scroll-video {
+  width: 80%;
+  transform: scale(1);
+  will-change: transform;
+  overflow: hidden;
+}
+.video-section .scroll-video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 1;
+}
+.video-section .play-icons {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-section .play-icons button {
+  all: unset;
+  cursor: pointer;
+}
+
+.scroller {
+  position: relative;
+  width: 100%;
+  padding: 0 !important;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px !important;
+}
+.scroller .what-we-do-title {
+  width: 100%;
+  text-align: center;
+  padding: 60px 0;
+}
+@media (max-width: 1440px) {
+  .scroller .what-we-do-title {
+    padding: 50px 0;
+  }
+}
+@media (max-width: 1280px) {
+  .scroller .what-we-do-title {
+    padding: 40px 0;
+  }
+}
+@media (max-width: 1024px) {
+  .scroller .what-we-do-title {
+    padding: 30px 0;
+  }
+}
+@media (max-width: 768px) {
+  .scroller .what-we-do-title {
+    padding: 20px 0;
+  }
+}
+.scroller .what-we-do-title h1 {
+  text-align: center;
+  color: var(--Main-Text, #1d212d);
+  text-align: center;
+  font-family: "Aeonik TRIAL";
+  font-size: 95px;
+  font-weight: 400;
+  letter-spacing: -1.9px;
+  margin-bottom: 20px;
+}
+@media (max-width: 1440px) {
+  .scroller .what-we-do-title h1 {
+    font-size: 80px;
+  }
+}
+@media (max-width: 1280px) {
+  .scroller .what-we-do-title h1 {
+    font-size: 64px;
+  }
+}
+@media (max-width: 1024px) {
+  .scroller .what-we-do-title h1 {
+    font-size: 44px;
+  }
+}
+@media (max-width: 768px) {
+  .scroller .what-we-do-title h1 {
+    font-size: 32px;
+  }
+}
+.scroller .what-we-do-title p {
+  color: var(--Sub-Tetxt, #82879a);
+  text-align: center;
+  font-family: "Aeonik TRIAL";
+  font-size: 22px;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.44px;
+}
+.scroller .content-wrapper,
+.scroller .img-card,
+.scroller .img-card img {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: filter 0.5s ease;
+}
+
+.what-we-do-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  gap: 50px;
+  padding-left: calc((100% - 1320px) / 2);
+}
+@media (max-width: 1366px) {
+  .what-we-do-container {
+    padding-left: calc((100% - 1100px) / 2);
+  }
+}
+@media (max-width: 1200px) {
+  .what-we-do-container {
+    padding-left: calc((100% - 880px) / 2);
+  }
+}
+@media (max-width: 992px) {
+  .what-we-do-container {
+    padding: 0 20px;
+    max-width: 960px;
+  }
+}
+@media (max-width: 768px) {
+  .what-we-do-container {
+    max-width: 720px;
+  }
+}
+@media (max-width: 576px) {
+  .what-we-do-container {
+    max-width: 540px;
+  }
+}
+@media (max-width: 768px) {
+  .what-we-do-container .text-block {
+    margin: 15px 0;
+  }
+}
+.what-we-do-container .text-block span {
+  color: #000;
+  font-family: "Aeonik TRIAL";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: -0.4px;
+}
+.what-we-do-container .text-block h1 {
+  color: var(--Smalt-900, #022f8e);
+  font-family: "Aeonik TRIAL";
+  font-size: 80px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -1.6px;
+  position: relative;
+}
+@media (max-width: 1440px) {
+  .what-we-do-container .text-block h1 {
+    font-size: 70px;
+  }
+}
+@media (max-width: 1280px) {
+  .what-we-do-container .text-block h1 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 991px) {
+  .what-we-do-container .text-block h1 {
+    font-size: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .what-we-do-container .text-block h1 {
+    font-size: 32px;
+  }
+}
+.what-we-do-container .text-block h1 img {
+  opacity: 0;
+}
+@media (max-width: 768px) {
+  .what-we-do-container .text-block h1 img {
+    display: none;
+  }
+}
+.what-we-do-container .text-block p {
+  color: var(--Sub-Tetxt, #82879a);
+  font-family: "Aeonik TRIAL";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: -0.4px;
+}
+@media (max-width: 991px) {
+  .what-we-do-container .text-block p {
+    font-size: 16px;
+    line-height: normal;
+  }
+}
+.what-we-do-container .img-card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.what-we-do-container .img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.what-we-do-container .tab-txt-block {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .what-we-do-container .tab-txt-block {
+    display: block;
+  }
+  .what-we-do-container .tab-txt-block .flex-row-reverse {
+    background: #ededed;
+    margin: 20px 0;
+    padding: 20px 0;
+  }
+  .what-we-do-container .tab-txt-block .text-block {
+    margin: 0;
+    margin-bottom: 15px;
+  }
+}
+.what-we-do-container .content-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+@media (max-width: 1024px) {
+  .what-we-do-container .content-wrapper {
+    display: none;
+  }
+}
+.what-we-do-container .content-wrapper .text-container {
+  width: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+  flex-direction: column;
+}
+.what-we-do-container .content-wrapper .text-block {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  left: 0;
+}
+.what-we-do-container .content-wrapper .text-block.active {
+  opacity: 1;
+  visibility: visible;
+}
+.what-we-do-container .content-wrapper .image-container {
+  width: 50%;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.what-we-do-container .content-wrapper .image-container .img-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.what-we-do-container .content-wrapper .image-container .img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.5s ease-in;
+}
+
+.testimonials-wrapper {
+  padding: 100px 0 !important;
+}
+.testimonials-wrapper .testimonials-title {
+  margin-bottom: 100px;
+  width: 100%;
+  display: flex;
+  gap: 100px;
+}
+@media (max-width: 1440px) {
+  .testimonials-wrapper .testimonials-title {
+    margin-bottom: 80px;
+    gap: 80px;
+  }
+}
+@media (max-width: 1280px) {
+  .testimonials-wrapper .testimonials-title {
+    margin-bottom: 60px;
+    gap: 60px;
+  }
+}
+@media (max-width: 1024px) {
+  .testimonials-wrapper .testimonials-title {
+    margin-bottom: 40px;
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+.testimonials-wrapper .testimonials-title h2 {
+  color: var(--Main-Text, #1d212d);
+  font-family: "Aeonik TRIAL";
+  font-size: 95px;
+  font-weight: 400;
+  letter-spacing: -1.9px;
+  text-align: left;
+  flex: 1;
+}
+@media (max-width: 1440px) {
+  .testimonials-wrapper .testimonials-title h2 {
+    font-size: 80px;
+  }
+}
+@media (max-width: 1280px) {
+  .testimonials-wrapper .testimonials-title h2 {
+    font-size: 64px;
+  }
+}
+@media (max-width: 1024px) {
+  .testimonials-wrapper .testimonials-title h2 {
+    font-size: 44px;
+  }
+}
+@media (max-width: 768px) {
+  .testimonials-wrapper .testimonials-title h2 {
+    font-size: 32px;
+  }
+}
+.testimonials-wrapper .testimonials-title p {
+  color: var(--Sub-Tetxt, #82879a);
+  font-family: "Aeonik TRIAL";
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: -0.44px;
+  flex: 1;
+}
+@media (max-width: 991px) {
+  .testimonials-wrapper .testimonials-title p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+.testimonials-wrapper .testimonials-list {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 991px) {
+  .testimonials-wrapper .testimonials-list {
+    flex-direction: column;
+  }
+}
+.testimonials-wrapper .testimonials-list .testimonial-item {
+  display: flex;
+  gap: 50px;
+  width: 90%;
+}
+@media (max-width: 991px) {
+  .testimonials-wrapper .testimonials-list .testimonial-item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+.testimonials-wrapper .testimonials-list .testimonial-item .img-container {
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  cursor: pointer;
+}
+@media (max-width: 1366px) {
+  .testimonials-wrapper .testimonials-list .testimonial-item .img-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media (max-width: 1024px) {
+  .testimonials-wrapper .testimonials-list .testimonial-item .img-container {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (max-width: 991px) {
+  .testimonials-wrapper .testimonials-list .testimonial-item .img-container {
+    width: 100px;
+    height: 100px;
+  }
+}
+.testimonials-wrapper .testimonials-list .testimonial-item .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all 0.5s ease;
+  filter: grayscale(1);
+}
+.testimonials-wrapper .testimonials-list .testimonial-item .img-container img:hover {
+  transform: scale(1.1);
+}
+.testimonials-wrapper .testimonials-list .testimonial-item .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1;
+}
+@media (max-width: 991px) {
+  .testimonials-wrapper .testimonials-list .testimonial-item .text-container {
+    text-align: center;
+  }
+}
+.testimonials-wrapper .testimonials-list .testimonial-item .text-container p {
+  color: #1d212d;
+  font-family: "Aeonik TRIAL";
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 50px;
+}
+@media (max-width: 991px) {
+  .testimonials-wrapper .testimonials-list .testimonial-item .text-container p {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .testimonials-wrapper .testimonials-list .testimonial-item .text-container p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+.testimonials-wrapper .testimonials-list .testimonial-item .text-container h4 {
+  margin-top: 4px;
+  color: var(--Smalt-900, #022f8e);
+  font-family: "Aeonik TRIAL";
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 28px; /* 121.739% */
+}
+.testimonials-wrapper .testimonials-list .testimonial-item .text-container span {
+  color: var(--Sub-Tetxt, #82879a);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px; /* 200% */
+  letter-spacing: -0.32px;
+}
+.testimonials-wrapper .thumb-container {
+  display: flex;
+  gap: 15px;
+  width: 200px;
+  flex-shrink: 0;
+}
+@media (max-width: 991px) {
+  .testimonials-wrapper .thumb-container {
+    display: none;
+  }
+}
+.testimonials-wrapper .thumb-container .thumb {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  width: 70px;
+  height: 400px;
+  object-fit: contain;
+  overflow: hidden;
+  cursor: pointer;
+}
+.testimonials-wrapper .thumb-container .thumb img {
+  filter: grayscale(1);
+}
+@media (max-width: 991px) {
+  .testimonials-wrapper .thumb-container .thumb {
+    height: 80px;
+    width: auto;
+  }
+  .testimonials-wrapper .thumb-container .thumb img {
+    height: 100%;
+    width: auto;
+  }
+}
+.testimonials-wrapper .thumb-container .thumb.active {
+  opacity: 1;
+}
+
+.why-us-section {
+  margin-top: 60px;
+}
+
+.content-wrapper-new {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
+  box-sizing: border-box;
+}
+@media (max-width: 1024px) {
+  .content-wrapper-new {
+    display: none;
+  }
+}
+.content-wrapper-new .text-container {
+  width: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+  flex-direction: column;
+}
+.content-wrapper-new .text-block {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+}
+.content-wrapper-new .text-block.active {
+  opacity: 1;
+  visibility: visible;
+}
+.content-wrapper-new .image-container {
+  width: 50%;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.content-wrapper-new .image-container .img-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.content-wrapper-new .image-container .img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.5s ease-in;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.p-120 {
+  padding: 120px !important;
+}
+
+.mt-120 {
+  margin-top: 60px !important;
+}
+
+/* Layout */
+.image-area {
+  width: 50%;
+  overflow: hidden;
+}
+.image-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-area {
+  width: 50%;
+  padding: 80px 60px;
+}
+
+/* Headings */
+.subtitle {
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.large-head {
+  font-size: 95px;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  font-weight: normal;
+  overflow: hidden;
+  padding-right: 25px;
+}
+
+.word {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* Feature image */
+.why-us-section .row {
+  align-items: stretch;
+}
+
+.image-col {
+  position: relative;
+  overflow: hidden;
+}
+
+#featureImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: translateZ(0);
+  will-change: opacity;
+}
+
+/* Accordion */
+.accordion-item {
+  border-bottom: 1px solid #333;
+  padding: 50px 0;
+}
+@media (max-width: 767px) {
+  .accordion-item {
+    padding: 30px 0;
+  }
+}
+
+.accordion-header {
+  width: 100%;
+  background: none;
+  color: #fff;
+  font-size: 23px;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  padding: 0 !important;
+}
+
+.accordion-body {
+  margin-top: 30px;
+  color: #ccc;
+  font-size: 16px;
+  padding: 0 !important;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.acc-content {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.accordion-button {
+  padding: 0 !important;
+}
+.accordion-button:not(.collapsed) {
+  box-shadow: none !important;
+}
+.accordion-button::after {
+  filter: invert(1);
+}
+.accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Technologies */
+.our-technolagies {
+  padding: 150px 0;
+}
+.our-technolagies .our-tec-logo {
+  margin-top: 120px;
+}
+@media (max-width: 1280px) {
+  .our-technolagies .our-tec-logo {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .our-technolagies .our-tec-logo {
+    margin-top: 50px;
+  }
+}
+
+.main-head {
+  font-size: 95px;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #1d212d;
+  font-weight: normal;
+}
+
+.sub-text {
+  font-size: 22px;
+  color: #82879a;
+  margin-bottom: 60px;
+  line-height: 1.6;
+}
+
+.tech-logos {
+  perspective: 1200px;
+}
+
+.logo-stack {
+  width: 120px;
+  height: 80px;
+}
+.logo-stack img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Interactive section */
+.interactive-section {
+  position: relative;
+  cursor: pointer;
+}
+.interactive-section a,
+.interactive-section button {
+  cursor: pointer;
+}
+
+.bg-blue {
+  background-color: #022f8e;
+}
+
+.marquee-text {
+  gap: 80px;
+  white-space: nowrap;
+  font-size: 64px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Custom cursor */
+.custom-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  opacity: 0;
+  mix-blend-mode: difference;
+}
+.custom-cursor svg path {
+  stroke: #ffffff;
+}
+
+.bookcall-text {
+  font-size: 95px;
+  font-weight: 400;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: inline-flex;
+  width: max-content;
+  white-space: nowrap;
+  will-change: transform;
+  gap: 90px;
+}
+@media (max-width: 767px) {
+  .marquee-track {
+    gap: 50px;
+  }
+}
+
+.divider {
+  height: 1px;
+  background-color: #fff;
+}
+
+/* Footer */
+.footer {
+  background-color: #0c0d14;
+  color: #ffffff;
+  padding: 80px 0;
+  font-size: 14px;
+}
+@media (max-width: 1366px) {
+  .footer {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 767px) {
+  .footer {
+    padding: 40px 0;
+  }
+}
+.footer h6 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 18px;
+}
+@media (max-width: 767px) {
+  .footer h6 {
+    font-size: 15px;
+  }
+}
+.footer a {
+  color: #aaa;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.footer .footer-item {
+  padding-left: 0;
+}
+.footer .footer-item li {
+  list-style: none;
+  margin-bottom: 20px;
+  padding-left: 0;
+}
+.footer .footer-item li a {
+  color: #80848d;
+  font-size: 18px;
+}
+.footer .social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #aaa;
+  background: #171A24;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .social-icons a:hover {
+  color: #fff;
+}
+@media (max-width: 1199px) {
+  .footer .social-icons a {
+    width: 45px;
+    height: 45px;
+  }
+}
+.footer hr {
+  border-color: #333;
+}
+
+/* Media Queries */
+@media (max-width: 1650px) {
+  .p-120 {
+    padding: 55px 80px !important;
+  }
+  .bookcall-text {
+    font-size: 70px;
+    padding: 40px 0 !important;
+  }
+  .large-head {
+    font-size: 83px;
+  }
+  .accordion-item {
+    padding: 40px 0;
+  }
+  .accordion-body {
+    margin: 20px 0;
+  }
+}
+@media (max-width: 1440px) {
+  .p-120 {
+    padding: 60px 60px !important;
+  }
+  .large-head,
+  .main-head {
+    font-size: 75px;
+  }
+  .mt-120 {
+    margin-top: 80px !important;
+  }
+  .our-technolagies {
+    padding: 90px 0;
+  }
+}
+@media (max-width: 1280px) {
+  .mt-120 {
+    margin-top: 50px !important;
+  }
+  .main-head {
+    font-size: 55px;
+  }
+  .our-technolagies {
+    padding: 70px 0;
+  }
+  .bookcall-text {
+    font-size: 30px;
+    padding: 20px 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  #featureImage {
+    max-height: 100%;
+    height: auto;
+    display: none;
+  }
+  .mt-120 {
+    margin-top: 30px !important;
+  }
+  .our-technolagies {
+    padding: 40px 0;
+  }
+  .main-head {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+  .sub-text {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .our-tec-logo {
+    flex-direction: column;
+  }
+  .large-head {
+    font-size: 40px;
+    padding-right: 0;
+  }
+  .footer {
+    padding: 30px 0;
+  }
+  .bookcall-text {
+    font-size: 40px;
+  }
+  .p-120 {
+    padding: 15px 15px !important;
+  }
+}
+@font-face {
+  font-family: "Aeonik TRIAL";
+  src: url("../fonts/AeonikTRIAL-Regular.woff2") format("woff2"), url("../fonts/AeonikTRIAL-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aeonik TRIAL";
+  src: url("../fonts/AeonikTRIAL-Light.woff2") format("woff2"), url("../fonts/AeonikTRIAL-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aeonik TRIAL";
+  src: url("../fonts/AeonikTRIAL-Bold.woff2") format("woff2"), url("../fonts/AeonikTRIAL-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: break-word;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Aeonik TRIAL";
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none !important;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+input:disabled {
+  background: #f3f3f3;
+}
+
+.custom-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1488px;
+}
+
+header {
+  padding: 60px 0 50px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 111;
+  animation: progress linear;
+  animation-timeline: scroll(root block);
+  animation-duration: 1ms;
+  animation-range: 30px 200px;
+  animation-fill-mode: forwards;
+}
+@media (max-width: 767px) {
+  header {
+    padding: 25px 0 15px 0;
+  }
+}
+
+@keyframes progress {
+  to {
+    padding: 10px 0 10px 0;
+    box-shadow: 1px 1px 13px 1px rgba(2, 47, 142, 0.0784313725);
+  }
+}
+.menus {
+  margin-right: 15px;
+}
+@media (max-width: 767px) {
+  .menus {
+    display: none;
+  }
+}
+.menus ul {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+  justify-content: flex-end;
+}
+.menus ul a {
+  color: var(--Sub-Tetxt, #82879a);
+  font-family: "Aeonik TRIAL";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.menus ul a:hover {
+  color: #022f8e;
+}
+
+.schedule-call-btn {
+  padding: 12px 20px;
+  color: var(--Main-Text, #1d212d);
+  font-family: "Aeonik TRIAL";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  border-radius: 5px;
+  border: 1px solid var(--Sub-Tetxt, #82879a);
+  background-color: #fff;
+  margin-left: auto;
+  transition: all 0.3s;
+}
+@media (max-width: 1199px) {
+  .schedule-call-btn {
+    padding: 12px 12px;
+  }
+}
+.schedule-call-btn:hover {
+  background-color: #022f8e;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.banner {
+  padding: 250px 0 100px 0;
+  position: relative;
+  min-height: calc(100vh - 155px);
+  z-index: 1;
+}
+@media (max-width: 767px) {
+  .banner {
+    padding: 115px 0 30px 0;
+    min-height: calc(100vh - 30px);
+  }
+}
+.banner p {
+  color: var(--Sub-Tetxt, #82879a);
+  font-family: "Aeonik TRIAL";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  /* 200% */
+  letter-spacing: -0.4px;
+}
+
+.banner-caption {
+  position: relative;
+  margin: 0 auto;
+  min-height: 190px;
+  margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+  .banner-caption {
+    min-height: 100px;
+    margin-bottom: 30px;
+  }
+}
+.banner-caption video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banner-caption .clipped-video {
+  -webkit-clip-path: url(#text-overlay);
+  clip-path: url(#text-overlay);
+}
+.banner-caption svg {
+  display: block;
+  position: absolute;
+  top: 0;
+}
+.banner-caption text {
+  font-family: "Aeonik TRIAL";
+  font-size: 155px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 190px;
+  /* 122.581% */
+  letter-spacing: -3.1px;
+}
+@media (max-width: 1199px) {
+  .banner-caption text {
+    font-size: 70px;
+  }
+}
+
+.cursor {
+  margin-left: 4px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.start-project-btn {
+  color: var(--Sub-Tetxt, #82879a);
+  font-family: "Aeonik TRIAL";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  /* 312.5% */
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+  border: none;
+  background: none;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+.start-project-btn:not(.is-active) {
+  transform: none !important;
+}
+.start-project-btn.is-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+.start-project-btn img {
+  margin-left: 18px;
+}
+
+.about-us {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .about-us {
+    min-height: auto;
+  }
+}
+.about-us p {
+  color: var(--Sub-Tetxt, #a7a7a7);
+  font-family: "Aeonik TRIAL";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 80px;
+  letter-spacing: -0.8px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .about-us p {
+    line-height: initial;
+    font-size: 22px;
+  }
+}
+
+.shape-video {
+  width: 70%;
+  text-align: center;
+  position: absolute;
+  top: -34vh;
+  pointer-events: none;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+@media (max-width: 767px) {
+  .shape-video {
+    top: -20vh;
+  }
+}
+.shape-video video {
+  width: 100%;
+  opacity: 0.6;
+}/*# sourceMappingURL=style.css.map */

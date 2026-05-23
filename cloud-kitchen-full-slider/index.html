@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CLOUDINE — Premium cloud kitchen crafting chef-inspired meals delivered fresh to your door." />
+  <title>CLOUDINE — Premium Cloud Kitchen</title>
+
+  <!-- Google Fonts: Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:    '#111111',
+            secondary:  '#4CB051',
+            accent:     '#C8E542',
+            'text-body':'#606060',
+            'light-gray':'#E9E9E9',
+            'soft-bg':  '#F8F8F8',
+            'dark-green':'#193B1B',
+          },
+          fontFamily: { lato: ['Lato', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="font-lato bg-primary overflow-x-hidden">
+
+<!-- Scroll progress bar -->
+<div id="scrollProgress" class="scroll-progress-bar"></div>
+
+<!-- ================================================================
+     HEADER
+================================================================ -->
+<header id="header">
+  <div class="header-inner">
+
+    <!-- Logo -->
+    <a href="#hero" class="logo-link">
+      <span class="logo-text">CLOUD<span class="logo-accent">INE</span></span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
+      <a href="#hero"          class="nav-link active-link">Home</a>
+      <a href="#about"         class="nav-link">About Us</a>
+
+      <!-- Menus Dropdown -->
+      <div class="nav-dropdown">
+        <a href="#featured-menu" class="nav-link nav-dropdown-trigger">
+          Menus <i class="fa fa-chevron-down dropdown-icon"></i>
+        </a>
+        <div class="dropdown-panel">
+          <a href="#featured-menu" class="dropdown-item" data-filter="veg">
+            <i class="fa fa-leaf"></i> Veg
+          </a>
+          <a href="#featured-menu" class="dropdown-item" data-filter="non-veg">
+            <i class="fa fa-drumstick-bite"></i> Non-Veg
+          </a>
+        </div>
+      </div>
+
+      <a href="#contact" class="nav-link">Contact Us</a>
+    </nav>
+
+    <!-- CTA Desktop -->
+    <a href="#featured-menu" class="btn-nav-cta hidden md:inline-flex">
+      Order Now <i class="fa fa-arrow-right ml-2"></i>
+    </a>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="hamburger-btn" aria-label="Toggle navigation">
+      <span class="hline"></span>
+      <span class="hline"></span>
+      <span class="hline"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu hidden">
+    <nav>
+      <a href="#hero"          class="mobile-nav-item">Home</a>
+      <a href="#about"         class="mobile-nav-item">About Us</a>
+      <a href="#featured-menu" class="mobile-nav-item">Menus — Veg</a>
+      <a href="#featured-menu" class="mobile-nav-item">Menus — Non-Veg</a>
+      <a href="#contact"       class="mobile-nav-item">Contact Us</a>
+      <a href="#featured-menu" class="btn-primary-sm mt-4 text-center block">Order Now</a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- ================================================================
+     HERO
+================================================================ -->
+<section id="hero" class="hero-section">
+  <!-- Background food image (below particles) -->
+  <div class="hero-bg-img" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80&fit=crop&auto=format')"></div>
+
+  <!-- Three.js canvas (above bg image) -->
+  <canvas id="hero-canvas"></canvas>
+
+  <!-- Dark gradient overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fa fa-star mr-2"></i>Premium Cloud Kitchen Experience
+    </div>
+
+    <h1 class="hero-title">
+      <span class="hero-line">Crafted with</span>
+      <span class="hero-line hero-gradient-line">Passion.</span>
+      <span class="hero-line">Delivered Fresh.</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Experience restaurant-quality meals crafted by expert chefs,<br class="hidden md:block" />
+      delivered straight to your doorstep in 30 minutes.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#featured-menu" class="btn-primary">
+        Explore Menu <i class="fa fa-utensils ml-2"></i>
+      </a>
+      <a href="#about" class="btn-outline">
+        Read More <i class="fa fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <span class="scroll-label">Scroll</span>
+    <div class="scroll-track"><div class="scroll-thumb"></div></div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     TOP MENU SECTION
+================================================================ -->
+<section id="top-menu" class="section-pad bg-soft-bg">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">Our Menu</span>
+      <h2 class="section-title">Explore <span class="text-secondary">Top Picks</span></h2>
+      <p class="section-subtitle">Handpicked favorites our customers love. Fresh, flavorful, crafted with care.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+
+      <!-- Card 1 -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500&q=80&fit=crop" alt="Grilled Chicken Bowl" loading="lazy" />
+          <span class="card-badge">Popular</span>
+        </div>
+        <div class="menu-card-body">
+          <h3>Grilled Chicken Bowl</h3>
+          <p>Tender grilled chicken on a bed of herbed rice with seasonal veggies and our signature sauce.</p>
+          <div class="card-footer">
+            <span class="card-price">₹320</span>
+            <a href="#featured-menu" class="card-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&q=80&fit=crop" alt="Veg Biryani" loading="lazy" />
+          <span class="card-badge veg-badge-tag">Veg</span>
+        </div>
+        <div class="menu-card-body">
+          <h3>Royal Veg Biryani</h3>
+          <p>Aromatic basmati rice layered with fresh vegetables, saffron, and fragrant whole spices.</p>
+          <div class="card-footer">
+            <span class="card-price">₹280</span>
+            <a href="#featured-menu" class="card-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80&fit=crop" alt="Classic Burger" loading="lazy" />
+          <span class="card-badge">Chef's Choice</span>
+        </div>
+        <div class="menu-card-body">
+          <h3>Classic Gourmet Burger</h3>
+          <p>Juicy beef patty with aged cheddar, caramelized onions, and house-made aioli on a brioche bun.</p>
+          <div class="card-footer">
+            <span class="card-price">₹350</span>
+            <a href="#featured-menu" class="card-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80&fit=crop" alt="Garden Salad" loading="lazy" />
+          <span class="card-badge veg-badge-tag">Veg</span>
+        </div>
+        <div class="menu-card-body">
+          <h3>Garden Fresh Salad</h3>
+          <p>Crisp seasonal greens, cherry tomatoes, cucumber, avocado, and signature lemon dressing.</p>
+          <div class="card-footer">
+            <span class="card-price">₹220</span>
+            <a href="#featured-menu" class="card-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=500&q=80&fit=crop" alt="Truffle Pasta" loading="lazy" />
+          <span class="card-badge new-badge">New</span>
+        </div>
+        <div class="menu-card-body">
+          <h3>Truffle Cream Pasta</h3>
+          <p>Al dente fettuccine in a rich truffle cream sauce with parmesan and black truffle shavings.</p>
+          <div class="card-footer">
+            <span class="card-price">₹390</span>
+            <a href="#featured-menu" class="card-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="menu-card">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&q=80&fit=crop" alt="Paneer Tikka" loading="lazy" />
+          <span class="card-badge veg-badge-tag">Veg</span>
+        </div>
+        <div class="menu-card-body">
+          <h3>Spiced Paneer Tikka</h3>
+          <p>Succulent cottage cheese marinated in yogurt and spices, grilled to perfection in a tandoor.</p>
+          <div class="card-footer">
+            <span class="card-price">₹310</span>
+            <a href="#featured-menu" class="card-btn">Order Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     ABOUT SECTION
+================================================================ -->
+<section id="about" class="section-pad bg-primary">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left: Image + Stats -->
+      <div class="about-img-wrapper">
+        <div class="about-img-glow"></div>
+        <img
+          src="https://images.unsplash.com/photo-1414235077951-493ca0c6c656?w=700&q=80&fit=crop"
+          alt="Our premium kitchen"
+          class="about-main-img"
+          loading="lazy"
+        />
+        <!-- Floating stats -->
+        <div class="stat-float stat-float--bl">
+          <div class="stat-icon"><i class="fa fa-users"></i></div>
+          <div>
+            <div class="stat-num" data-target="10000">0</div>
+            <div class="stat-lbl">Happy Customers</div>
+          </div>
+        </div>
+        <div class="stat-float stat-float--tr">
+          <div class="stat-icon star-icon"><i class="fa fa-star"></i></div>
+          <div>
+            <div class="stat-num" data-target="4.9" data-decimal="1">0</div>
+            <div class="stat-lbl">Avg. Rating</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="about-content">
+        <span class="section-label">About Us</span>
+        <h2 class="about-heading">We Cook. <span class="text-secondary">You Enjoy.</span></h2>
+        <p class="about-para">
+          CLOUDINE is a premium cloud kitchen brand crafting chef-inspired meals with the finest ingredients.
+          Every dish is a testament to our passion for culinary excellence and our commitment to delivering
+          an unparalleled dining experience to your doorstep.
+        </p>
+        <p class="about-para mt-4">
+          Founded by award-winning chefs, we blend traditional recipes with modern culinary techniques
+          to create dishes that are as beautiful as they are delicious.
+        </p>
+
+        <ul class="about-features">
+          <li><i class="fa fa-circle-check"></i> Farm-fresh ingredients sourced daily</li>
+          <li><i class="fa fa-circle-check"></i> Expert team of award-winning chefs</li>
+          <li><i class="fa fa-circle-check"></i> Fast & safe delivery in 30 minutes</li>
+          <li><i class="fa fa-circle-check"></i> Fully customizable meal options</li>
+          <li><i class="fa fa-circle-check"></i> FSSAI certified hygienic kitchen</li>
+          <li><i class="fa fa-circle-check"></i> 100% eco-friendly packaging</li>
+        </ul>
+
+        <a href="#featured-menu" class="btn-primary mt-8 inline-flex items-center gap-2">
+          View Full Menu <i class="fa fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Full-width Banner -->
+<div class="about-banner">
+  <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=1600&q=80&fit=crop" alt="Premium kitchen banner" loading="lazy" />
+  <div class="about-banner-overlay">
+    <h2>Taste the Difference of <span class="text-accent">Premium Quality</span></h2>
+  </div>
+</div>
+
+<!-- Partner Logos -->
+<div class="logos-section">
+  <div class="container">
+    <p class="logos-eyebrow">Trusted & Featured By</p>
+    <div class="logos-row">
+      <div class="logo-item"><svg viewBox="0 0 130 36"><text x="4" y="26" font-family="Lato,sans-serif" font-size="22" font-weight="900" fill="currentColor">ZOMATO</text></svg></div>
+      <div class="logo-item"><svg viewBox="0 0 110 36"><text x="4" y="26" font-family="Lato,sans-serif" font-size="22" font-weight="900" fill="currentColor">SWIGGY</text></svg></div>
+      <div class="logo-item"><svg viewBox="0 0 160 36"><text x="4" y="26" font-family="Lato,sans-serif" font-size="18" font-weight="700" fill="currentColor">TIMES FOOD</text></svg></div>
+      <div class="logo-item"><svg viewBox="0 0 130 36"><text x="4" y="26" font-family="Lato,sans-serif" font-size="20" font-weight="700" fill="currentColor">EATCLUB</text></svg></div>
+      <div class="logo-item"><svg viewBox="0 0 150 36"><text x="4" y="26" font-family="Lato,sans-serif" font-size="18" font-weight="700" fill="currentColor">MAGICPIN</text></svg></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ================================================================
+     FEATURED MENU SECTION
+================================================================ -->
+<section id="featured-menu" class="section-pad bg-primary">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">Featured Menu</span>
+      <h2 class="section-title text-white">Our <span class="text-secondary">Signature</span> Dishes</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.5)">Explore our curated selection of dishes crafted with premium ingredients.</p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="menu-tabs">
+      <button class="menu-tab active" data-filter="veg"><i class="fa fa-leaf mr-2"></i>Vegetarian</button>
+      <button class="menu-tab" data-filter="non-veg"><i class="fa fa-drumstick-bite mr-2"></i>Non-Vegetarian</button>
+      <button class="menu-tab" data-filter="specials"><i class="fa fa-crown mr-2"></i>Specials</button>
+    </div>
+
+    <!-- Items Grid -->
+    <div id="featuredGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+
+      <!-- ---- VEG ---- -->
+      <div class="feat-item" data-cat="veg"
+           data-title="Paneer Butter Masala"
+           data-desc="Silky smooth paneer cubes in a rich, buttery tomato gravy with aromatic spices. A classic north Indian delicacy served with naan or rice. Perfect for any occasion — comforting, bold, and deeply flavorful."
+           data-price="₹280"
+           data-img="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80&fit=crop" alt="Paneer Butter Masala" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Paneer Butter Masala</h3>
+          <div class="feat-meta">
+            <span class="veg-dot-badge"><i class="fa fa-circle"></i> Veg</span>
+            <span class="feat-price">₹280</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-item" data-cat="veg"
+           data-title="Royal Veg Biryani"
+           data-desc="Fragrant basmati rice slow-cooked with premium vegetables, whole spices, saffron milk, and crispy caramelized onions. A royal feast celebrating the rich tradition of Mughal cuisine."
+           data-price="₹260"
+           data-img="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&q=80&fit=crop" alt="Veg Biryani" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Royal Veg Biryani</h3>
+          <div class="feat-meta">
+            <span class="veg-dot-badge"><i class="fa fa-circle"></i> Veg</span>
+            <span class="feat-price">₹260</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-item" data-cat="veg"
+           data-title="Garden Fresh Salad"
+           data-desc="A vibrant mix of seasonal greens, cherry tomatoes, cucumber, avocado, roasted nuts, and house-made lemon tahini dressing. Light, healthy, and incredibly delicious."
+           data-price="₹200"
+           data-img="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80&fit=crop" alt="Garden Salad" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Garden Fresh Salad</h3>
+          <div class="feat-meta">
+            <span class="veg-dot-badge"><i class="fa fa-circle"></i> Veg</span>
+            <span class="feat-price">₹200</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-item" data-cat="veg"
+           data-title="Truffle Cream Pasta"
+           data-desc="Silky al dente fettuccine in a luxurious truffle cream sauce, topped with freshly grated Parmigiano-Reggiano and rare black truffle shavings. An Italian classic, elevated."
+           data-price="₹380"
+           data-img="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=400&q=80&fit=crop" alt="Truffle Pasta" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Truffle Cream Pasta</h3>
+          <div class="feat-meta">
+            <span class="veg-dot-badge"><i class="fa fa-circle"></i> Veg</span>
+            <span class="feat-price">₹380</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- NON-VEG (hidden by default) ---- -->
+      <div class="feat-item feat-hidden" data-cat="non-veg"
+           data-title="Chicken Tikka Masala"
+           data-desc="Tender chicken tikka pieces in a velvety spiced tomato and cream gravy. Marinated overnight and slow-cooked for maximum depth of flavor. Served with pillow-soft naan fresh from the tandoor."
+           data-price="₹340"
+           data-img="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80&fit=crop" alt="Chicken Tikka Masala" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Chicken Tikka Masala</h3>
+          <div class="feat-meta">
+            <span class="nonveg-dot-badge"><i class="fa fa-circle"></i> Non-Veg</span>
+            <span class="feat-price">₹340</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-item feat-hidden" data-cat="non-veg"
+           data-title="Grilled Atlantic Salmon"
+           data-desc="Fresh Atlantic salmon fillet grilled to perfection, served with roasted asparagus, lemon butter sauce, and herb-crusted potatoes. Rich in omega-3s and absolutely divine."
+           data-price="₹520"
+           data-img="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&q=80&fit=crop" alt="Grilled Salmon" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Grilled Atlantic Salmon</h3>
+          <div class="feat-meta">
+            <span class="nonveg-dot-badge"><i class="fa fa-circle"></i> Non-Veg</span>
+            <span class="feat-price">₹520</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-item feat-hidden" data-cat="non-veg"
+           data-title="Classic Gourmet Burger"
+           data-desc="Signature 150g beef patty with aged cheddar, crispy bacon, caramelized onions, house pickles, and our secret aioli sauce, all nestled in a toasted brioche bun. A true classic."
+           data-price="₹350"
+           data-img="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80&fit=crop" alt="Classic Burger" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Classic Gourmet Burger</h3>
+          <div class="feat-meta">
+            <span class="nonveg-dot-badge"><i class="fa fa-circle"></i> Non-Veg</span>
+            <span class="feat-price">₹350</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-item feat-hidden" data-cat="non-veg"
+           data-title="Mutton Dum Biryani"
+           data-desc="Slow-cooked mutton biryani in the traditional dum style with fragrant long-grain basmati, 23 whole spices, saffron milk, and topped with crispy golden fried onions. A legendary dish."
+           data-price="₹420"
+           data-img="https://images.unsplash.com/photo-1563379091307-44bc10049b58?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1563379091307-44bc10049b58?w=400&q=80&fit=crop" alt="Mutton Biryani" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Mutton Dum Biryani</h3>
+          <div class="feat-meta">
+            <span class="nonveg-dot-badge"><i class="fa fa-circle"></i> Non-Veg</span>
+            <span class="feat-price">₹420</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- SPECIALS (hidden by default) ---- -->
+      <div class="feat-item feat-hidden" data-cat="specials"
+           data-title="Chef's Tasting Platter"
+           data-desc="An exclusive multi-course tasting experience featuring 8 mini dishes curated personally by our head chef. The menu changes weekly based on seasonal availability. A true culinary journey."
+           data-price="₹899"
+           data-img="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&q=80&fit=crop" alt="Chef's Platter" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Chef's Tasting Platter</h3>
+          <div class="feat-meta">
+            <span class="special-dot-badge"><i class="fa fa-crown"></i> Special</span>
+            <span class="feat-price">₹899</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-item feat-hidden" data-cat="specials"
+           data-title="Weekend BBQ Box"
+           data-desc="Premium weekend indulgence with slow-smoked BBQ ribs, grilled corn, coleslaw, garlic bread, and our signature smoky BBQ sauce. Generously feeds 2 people comfortably."
+           data-price="₹750"
+           data-img="https://images.unsplash.com/photo-1544025162-d76538016048?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1544025162-d76538016048?w=400&q=80&fit=crop" alt="BBQ Box" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Weekend BBQ Box</h3>
+          <div class="feat-meta">
+            <span class="special-dot-badge"><i class="fa fa-crown"></i> Special</span>
+            <span class="feat-price">₹750</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-item feat-hidden" data-cat="specials"
+           data-title="Saffron Risotto"
+           data-desc="Creamy arborio rice slow-cooked with premium saffron threads, white wine, and a generous portion of Parmigiano-Reggiano. Finished with a drizzle of white truffle oil and micro herbs."
+           data-price="₹480"
+           data-img="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=400&q=80&fit=crop" alt="Saffron Risotto" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Saffron Risotto</h3>
+          <div class="feat-meta">
+            <span class="special-dot-badge"><i class="fa fa-crown"></i> Special</span>
+            <span class="feat-price">₹480</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-item feat-hidden" data-cat="specials"
+           data-title="Dessert Fusion Box"
+           data-desc="A decadent collection of 6 artisanal desserts: warm chocolate lava cake, mango panna cotta, matcha tiramisu, crème brûlée, gulab jamun shots, and a surprise seasonal creation."
+           data-price="₹580"
+           data-img="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700&q=80&fit=crop">
+        <div class="feat-img-wrap">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=80&fit=crop" alt="Dessert Box" loading="lazy" />
+          <div class="feat-overlay"><button class="feat-view-btn">View Details</button></div>
+        </div>
+        <div class="feat-info">
+          <h3>Dessert Fusion Box</h3>
+          <div class="feat-meta">
+            <span class="special-dot-badge"><i class="fa fa-crown"></i> Special</span>
+            <span class="feat-price">₹580</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     EVENTS / SERVICES SECTION
+================================================================ -->
+<section id="events" class="section-pad bg-soft-bg">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">Special Services</span>
+      <h2 class="section-title">More Than Just <span class="text-secondary">Delivery</span></h2>
+      <p class="section-subtitle">From corporate catering to exclusive private dining, we do it all with culinary excellence.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+
+      <!-- Event Card 1 -->
+      <div class="event-card">
+        <div class="event-img-wrap">
+          <img src="https://images.unsplash.com/photo-1414235077951-493ca0c6c656?w=600&q=80&fit=crop" alt="Corporate Catering" loading="lazy" />
+          <div class="event-overlay">
+            <div class="event-overlay-inner">
+              <i class="fa fa-building text-3xl text-accent mb-3"></i>
+              <a href="#contact" class="event-overlay-btn">Get Quote</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-body">
+          <div class="event-tag">Corporate</div>
+          <h3>Corporate Catering</h3>
+          <p>Premium office lunch solutions for teams of all sizes. Healthy, delicious, and delivered on time every day.</p>
+          <a href="#contact" class="event-cta">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+        </div>
+      </div>
+
+      <!-- Event Card 2 (Featured) -->
+      <div class="event-card event-featured">
+        <div class="event-img-wrap">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80&fit=crop" alt="Weekend Specials" loading="lazy" />
+          <div class="event-overlay">
+            <div class="event-overlay-inner">
+              <i class="fa fa-calendar text-3xl text-accent mb-3"></i>
+              <a href="#featured-menu" class="event-overlay-btn">View Menu</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-body">
+          <div class="event-tag event-tag--special">Weekend Special</div>
+          <h3>Weekend Indulgence</h3>
+          <p>Limited-time weekend specials crafted exclusively by our head chef every Saturday & Sunday.</p>
+          <a href="#featured-menu" class="event-cta">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+        </div>
+      </div>
+
+      <!-- Event Card 3 -->
+      <div class="event-card">
+        <div class="event-img-wrap">
+          <img src="https://images.unsplash.com/photo-1530062845289-9109b2c9c868?w=600&q=80&fit=crop" alt="Private Dining" loading="lazy" />
+          <div class="event-overlay">
+            <div class="event-overlay-inner">
+              <i class="fa fa-heart text-3xl text-accent mb-3"></i>
+              <a href="#contact" class="event-overlay-btn">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="event-body">
+          <div class="event-tag">Exclusive</div>
+          <h3>Private Dining</h3>
+          <p>Exclusive chef's table experience for special occasions. Personalized menus crafted just for you.</p>
+          <a href="#contact" class="event-cta">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     TESTIMONIALS
+================================================================ -->
+<section id="testimonials" class="section-pad bg-primary overflow-hidden">
+  <div class="container">
+
+    <div class="section-header mb-16">
+      <span class="section-label">Testimonials</span>
+      <h2 class="section-title text-white">What Our <span class="text-secondary">Customers</span> Say</h2>
+    </div>
+
+    <!-- Carousel -->
+    <div class="testimonials-viewport">
+      <div class="testimonials-track" id="testimonialsTrack">
+
+        <div class="tcard">
+          <div class="tcard-quote"><i class="fa fa-quote-left"></i></div>
+          <p class="tcard-text">"Absolutely incredible food quality! Every meal feels like it was cooked by a personal chef. The Truffle Pasta is now my weekend ritual. CLOUDINE has completely changed how I think about food delivery!"</p>
+          <div class="tcard-stars">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+          </div>
+          <div class="tcard-author">
+            <img src="https://ui-avatars.com/api/?name=Sarah+Mitchell&background=4CB051&color=fff&size=80&bold=true" alt="Sarah Mitchell" />
+            <div>
+              <strong>Sarah Mitchell</strong>
+              <span>Marketing Director, Bangalore</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tcard">
+          <div class="tcard-quote"><i class="fa fa-quote-left"></i></div>
+          <p class="tcard-text">"The delivery is always on time and the food arrives hot and fresh. I've tried the Chicken Tikka Masala multiple times and it's consistently brilliant. Highly recommended for anyone who loves great food!"</p>
+          <div class="tcard-stars">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+          </div>
+          <div class="tcard-author">
+            <img src="https://ui-avatars.com/api/?name=James+Rodriguez&background=193B1B&color=C8E542&size=80&bold=true" alt="James Rodriguez" />
+            <div>
+              <strong>James Rodriguez</strong>
+              <span>Software Engineer, Mumbai</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tcard">
+          <div class="tcard-quote"><i class="fa fa-quote-left"></i></div>
+          <p class="tcard-text">"Best cloud kitchen in the city, hands down. The Paneer Tikka is out of this world — perfectly marinated and grilled. I love the eco-friendly packaging too. Rare to find quality and sustainability together!"</p>
+          <div class="tcard-stars">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+          </div>
+          <div class="tcard-author">
+            <img src="https://ui-avatars.com/api/?name=Priya+Sharma&background=C8E542&color=111&size=80&bold=true" alt="Priya Sharma" />
+            <div>
+              <strong>Priya Sharma</strong>
+              <span>Food Blogger, Delhi</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tcard">
+          <div class="tcard-quote"><i class="fa fa-quote-left"></i></div>
+          <p class="tcard-text">"CLOUDINE's corporate catering service is phenomenal. Our team of 50 absolutely loves the variety and freshness of every meal. It's boosted morale tremendously. The corporate plan is fantastic value!"</p>
+          <div class="tcard-stars">
+            <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-alt"></i>
+          </div>
+          <div class="tcard-author">
+            <img src="https://ui-avatars.com/api/?name=Michael+Chen&background=4CB051&color=fff&size=80&bold=true" alt="Michael Chen" />
+            <div>
+              <strong>Michael Chen</strong>
+              <span>Operations Head, Hyderabad</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="testimonials-nav">
+      <button id="prevBtn" class="t-nav-btn" aria-label="Previous"><i class="fa fa-arrow-left"></i></button>
+      <div id="tDots" class="t-dots"></div>
+      <button id="nextBtn" class="t-nav-btn" aria-label="Next"><i class="fa fa-arrow-right"></i></button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     BLOG SECTION
+================================================================ -->
+<section id="blog" class="section-pad bg-soft-bg">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">Our Blog</span>
+      <h2 class="section-title">Food <span class="text-secondary">Stories</span> & Tips</h2>
+      <p class="section-subtitle">Insights from our kitchen — recipes, food science, and culinary adventures.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+
+      <article class="blog-card">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1414235077951-493ca0c6c656?w=500&q=80&fit=crop" alt="Cloud Kitchens" loading="lazy" />
+          <span class="blog-cat-badge">Industry</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span><i class="fa fa-calendar mr-1"></i>Mar 12, 2026</span>
+            <span><i class="fa fa-clock mr-1"></i>5 min read</span>
+          </div>
+          <h3>5 Reasons Why Cloud Kitchens Are the Future of Food</h3>
+          <p>The food delivery industry is evolving rapidly. Here's why cloud kitchens are leading the revolution and what it means for food lovers everywhere.</p>
+          <a href="#" class="blog-cta">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card blog-card--featured">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&q=80&fit=crop" alt="Fresh Ingredients" loading="lazy" />
+          <span class="blog-cat-badge blog-cat--featured">Featured</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span><i class="fa fa-calendar mr-1"></i>Mar 8, 2026</span>
+            <span><i class="fa fa-clock mr-1"></i>4 min read</span>
+          </div>
+          <h3>Our Chef's Secret: Using Fresh Local Ingredients Daily</h3>
+          <p>Meet the farmers and suppliers who help us source the finest local produce every single morning. The story behind every bite we serve.</p>
+          <a href="#" class="blog-cta">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-img-wrap">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=500&q=80&fit=crop" alt="Kitchen Hygiene" loading="lazy" />
+          <span class="blog-cat-badge">Kitchen</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta">
+            <span><i class="fa fa-calendar mr-1"></i>Feb 28, 2026</span>
+            <span><i class="fa fa-clock mr-1"></i>6 min read</span>
+          </div>
+          <h3>How We Maintain Premium Hygiene Standards in Every Dish</h3>
+          <p>A behind-the-scenes look at our FSSAI-certified kitchen and the rigorous quality control processes that ensure every meal is safe and fresh.</p>
+          <a href="#" class="blog-cta">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     CONTACT SECTION
+================================================================ -->
+<section id="contact" class="section-pad bg-dark-green relative overflow-hidden">
+  <div class="contact-glow-1"></div>
+  <div class="contact-glow-2"></div>
+  <div class="container relative" style="z-index:2">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Info -->
+      <div class="contact-info-col">
+        <span class="section-label">Contact Us</span>
+        <h2 class="contact-heading">Ready to <span class="text-accent">Order?</span></h2>
+        <p class="contact-sub">Experience the CLOUDINE difference. Place an order, make a reservation, or simply say hello.</p>
+        <div class="contact-details">
+          <div class="contact-row">
+            <div class="contact-icon-box"><i class="fa fa-phone"></i></div>
+            <div><strong>Phone</strong><span>+91 98765 43210</span></div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon-box"><i class="fa fa-envelope"></i></div>
+            <div><strong>Email</strong><span>hello@cloudine.in</span></div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon-box"><i class="fa fa-location-dot"></i></div>
+            <div><strong>Kitchen Hub</strong><span>12 Koramangala, Bangalore 560034</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form class="contact-form" id="contactForm">
+        <div class="form-grid-2">
+          <input type="text"  class="form-inp" placeholder="Your Name" required />
+          <input type="email" class="form-inp" placeholder="Email Address" required />
+        </div>
+        <input type="tel" class="form-inp" placeholder="Phone Number" />
+        <textarea class="form-inp form-textarea" rows="4" placeholder="Message or Order Details"></textarea>
+        <button type="submit" class="btn-primary w-full justify-center">
+          Send Message <i class="fa fa-paper-plane ml-2"></i>
+        </button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+<footer id="footer" class="bg-primary border-t border-white/10 pt-16 pb-8">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="#hero" class="logo-link">
+          <span class="logo-text">CLOUD<span class="logo-accent">INE</span></span>
+        </a>
+        <p class="footer-tagline">Crafted with passion.<br/>Delivered to your door.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#featured-menu">Our Menu</a></li>
+          <li><a href="#events">Services</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Menu Categories -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Menu Categories</h4>
+        <ul class="footer-links">
+          <li><a href="#featured-menu">Vegetarian</a></li>
+          <li><a href="#featured-menu">Non-Vegetarian</a></li>
+          <li><a href="#featured-menu">Chef's Specials</a></li>
+          <li><a href="#featured-menu">Weekend Box</a></li>
+          <li><a href="#events">Corporate Catering</a></li>
+          <li><a href="#events">Private Dining</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Stay Updated</h4>
+        <p class="footer-nl-text">Subscribe for exclusive deals, new menu launches, and culinary tips.</p>
+        <form class="footer-nl-form" id="nlForm">
+          <input type="email" class="nl-input" placeholder="Enter your email" required />
+          <button type="submit" class="nl-btn" aria-label="Subscribe"><i class="fa fa-arrow-right"></i></button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 CLOUDINE. All rights reserved. Crafted with <i class="fa fa-heart text-secondary"></i> in India.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ================================================================
+     MODAL
+================================================================ -->
+<div id="modal" class="modal-backdrop modal-hidden" role="dialog" aria-modal="true">
+  <div class="modal-box" id="modalBox">
+
+    <button id="modalClose" class="modal-close-btn" aria-label="Close modal">
+      <i class="fa fa-times"></i>
+    </button>
+
+    <div class="modal-layout">
+      <!-- Image Column -->
+      <div class="modal-img-col">
+        <img id="modalImg" src="" alt="" class="modal-dish-img" />
+        <div class="modal-cat-tag" id="modalCat"></div>
+      </div>
+      <!-- Info Column -->
+      <div class="modal-info-col">
+        <span class="modal-eyebrow">Signature Dish</span>
+        <h2 id="modalTitle" class="modal-dish-title"></h2>
+        <p id="modalDesc" class="modal-dish-desc"></p>
+        <div class="modal-price-block">
+          <span class="modal-price-label">Price</span>
+          <span id="modalPrice" class="modal-price-val"></span>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn-primary">Order Now <i class="fa fa-shopping-cart ml-2"></i></a>
+          <button id="modalCloseAlt" class="btn-outline-ghost">Close</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ================================================================
+     SCRIPTS
+================================================================ -->
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- Three.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<!-- Lenis Smooth Scroll
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script> -->
+<!-- Main JS -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

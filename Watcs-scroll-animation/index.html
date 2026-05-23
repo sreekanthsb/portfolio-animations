@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SW8434 | Imported Rolex Watch For Men – ₹1,999</title>
+  <meta name="description"
+    content="Buy the premium Imported Rolex Watch For Men (SW8434) at ₹1,999. Original ₹11,999. 7AA quality, fast delivery across India." />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://unpkg.com/framer-motion@11/dist/framer-motion.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <a href="#" class="logo">Shoes<span>World</span></a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#" onclick="closeNav()">Collection</a>
+      <a href="#" onclick="closeNav()">Story</a>
+      <a href="#" onclick="closeNav()">Contact</a>
+    </nav>
+    <div class="header-right">
+      <button class="cart-btn" onclick="handleCart()"><i class="fa-solid fa-bag-shopping"></i> &nbsp;Cart <span
+          id="cart-badge">1</span></button>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" onclick="closeNav()"></div>
+
+  <!-- ═══════════════════ HERO SEQUENCE ═══════════════════ -->
+  <section class="hero-sequence" id="hero-sequence">
+    <div class="hero-sticky">
+      <!-- Canvas renders frames -->
+      <canvas id="hero-canvas"></canvas>
+
+      <!-- Vignette -->
+      <div class="hero-vignette"></div>
+
+      <!-- Loading overlay -->
+      <div class="hero-loader" id="hero-loader">
+        <div class="loader-ring"></div>
+        <span class="loader-text">Loading Experience</span>
+      </div>
+
+      <!-- Panel 1: Intro (frames 1–50) -->
+      <div class="hero-panel" id="hp-1">
+        <p class="hp-eyebrow">SW8434 · Premium Collection · 2025</p>
+        <h1 class="hp-title">Crafted for<br><em>the Timeless</em><br>Gentleman</h1>
+        <p class="hp-body">An iconic timepiece inspired by legendary design, engineered with 7AA-grade precision
+          mechanics. Where luxury meets accessibility.</p>
+      </div>
+
+      <!-- Panel 2: Quality (frames 60–110) -->
+      <div class="hero-panel" id="hp-2">
+        <p class="hp-eyebrow">Premium Quality</p>
+        <h2 class="hp-title">7AA Grade<br><em>Movement</em></h2>
+        <p class="hp-body">Precision-engineered with the finest 7AA-grade components for flawless, reliable timekeeping
+          that rivals watches sold at ten times the price.</p>
+      </div>
+
+      <!-- Panel 3: Durability (frames 120–170) -->
+      <div class="hero-panel" id="hp-3">
+        <p class="hp-eyebrow">Built to Last</p>
+        <h2 class="hp-title">Scratch-Proof<br><em>Crystal</em> Glass</h2>
+        <p class="hp-body">Mineral crystal glass engineered to resist the rigors of daily wear — stainless steel case
+          with water resistance up to 30 meters.</p>
+      </div>
+
+      <!-- Panel 4: Price reveal (frames 185–240) -->
+      <div class="hero-panel" id="hp-4">
+        <p class="hp-eyebrow">Exclusive Offer</p>
+        <h2 class="hp-title">Luxury at<br><em>₹1,999</em></h2>
+        <p class="hp-body">83% off the original price of ₹11,999. Fast delivery across India. Limited stock — only 7
+          units remaining today.</p>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="hero-scroll-hint" id="hero-scroll-hint">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="hero-progress-bar">
+        <div class="hero-progress-fill" id="hero-progress-fill"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Premium 7AA Grade</span><span>·</span>
+      <span>Imported Design</span><span>·</span>
+      <span>Water Resistant</span><span>·</span>
+      <span>Scratch-Proof Glass</span><span>·</span>
+      <span>Stainless Steel Case</span><span>·</span>
+      <span>Fast Delivery India</span><span>·</span>
+      <span>Premium 7AA Grade</span><span>·</span>
+      <span>Imported Design</span><span>·</span>
+      <span>Water Resistant</span><span>·</span>
+      <span>Scratch-Proof Glass</span><span>·</span>
+      <span>Stainless Steel Case</span><span>·</span>
+      <span>Fast Delivery India</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ PRODUCT REVEAL ═══════════════════ -->
+  <section class="product-reveal">
+    <div class="container">
+      <div class="pr-img-wrap" data-motion="fade-right">
+        <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=900&q=85&auto=format&fit=crop"
+          alt="Rolex Watch for Men" />
+        <div class="pr-img-glow"></div>
+      </div>
+      <div class="pr-text">
+        <span class="section-label" data-motion="fade-up">About This Watch</span>
+        <h2 class="big-heading" data-motion="fade-up" data-delay="100">
+          A story told<br>in every <em>second</em>
+        </h2>
+        <p class="body-text" data-motion="fade-up" data-delay="200">
+          The SW8434 is more than a watch — it is a statement. Precision-crafted with 7AA-grade movement, a
+          scratch-resistant sapphire-inspired crystal, and a stainless steel case that exudes confidence in every
+          boardroom and venue you enter.
+        </p>
+        <p class="body-text" data-motion="fade-up" data-delay="300">
+          Inspired by the legendary Rolex silhouette, reimagined for the modern man who refuses to compromise between
+          heritage and affordability.
+        </p>
+        <div class="stat-row" data-motion="fade-up" data-delay="400">
+          <div class="stat"><strong>7AA</strong><span>Grade Quality</span></div>
+          <div class="stat"><strong>312+</strong><span>Reviews</span></div>
+          <div class="stat"><strong>4.8★</strong><span>Rating</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PRICE & DETAILS ═══════════════════ -->
+  <section class="price-section" id="details">
+    <div class="container">
+      <!-- LEFT: Price & CTA -->
+      <div class="ps-left">
+        <span class="section-label" data-motion="fade-up">Pricing & Offer</span>
+        <h2 class="ps-heading" data-motion="fade-up" data-delay="80">
+          Wear Luxury.<br>Pay Smart.
+        </h2>
+
+        <div class="price-display" data-motion="scale" data-delay="160">
+          <div class="price-original">Original Price: ₹11,999</div>
+          <div class="price-now"><sup>₹</sup>1,999</div>
+          <span class="price-badge">83% OFF — Today Only</span>
+        </div>
+
+        <ul class="features-list" data-motion="fade-up" data-delay="240">
+          <li><span class="feat-icon"><i class="fa-solid fa-check"></i></span>Premium 7AA Grade Movement</li>
+          <li><span class="feat-icon"><i class="fa-solid fa-check"></i></span>Scratch-Resistant Crystal Glass</li>
+          <li><span class="feat-icon"><i class="fa-solid fa-check"></i></span>Stainless Steel Case & Strap</li>
+          <li><span class="feat-icon"><i class="fa-solid fa-check"></i></span>Water-Resistant up to 30m</li>
+          <li><span class="feat-icon"><i class="fa-solid fa-check"></i></span>Nationwide Delivery — All India</li>
+        </ul>
+
+        <div class="cta-group" data-motion="fade-up" data-delay="320">
+          <button class="btn-primary" onclick="handleCart()">
+            <i class="fa-solid fa-bag-shopping"></i> &nbsp; Buy Now — ₹1,999
+          </button>
+          <button class="btn-outline">
+            <i class="fa-regular fa-heart"></i> &nbsp; Add to Wishlist
+          </button>
+        </div>
+
+        <div class="trust-row" data-motion="fade-up" data-delay="400">
+          <div class="trust-item"><i class="fa-solid fa-lock"></i> Secure Checkout</div>
+          <div class="trust-item"><i class="fa-solid fa-rotate-left"></i> Easy Returns</div>
+          <div class="trust-item"><i class="fa-solid fa-truck-fast"></i> Fast Delivery</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Specs & Rating -->
+      <div class="ps-right">
+        <div data-motion="fade-left" data-delay="100" style="margin-bottom: 56px;">
+          <div class="rating-big">4.8</div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <div class="review-count">Based on 312 verified reviews</div>
+        </div>
+
+        <h3 class="spec-title" data-motion="fade-left" data-delay="180">Specifications</h3>
+        <table class="spec-table" data-motion="fade-left" data-delay="240">
+          <tr>
+            <td>SKU</td>
+            <td>9574</td>
+          </tr>
+          <tr>
+            <td>Model</td>
+            <td>SW8434</td>
+          </tr>
+          <tr>
+            <td>Category</td>
+            <td>Men's Watch</td>
+          </tr>
+          <tr>
+            <td>Movement</td>
+            <td>Quartz (7AA Grade)</td>
+          </tr>
+          <tr>
+            <td>Case Material</td>
+            <td>Stainless Steel</td>
+          </tr>
+          <tr>
+            <td>Glass</td>
+            <td>Mineral Crystal</td>
+          </tr>
+          <tr>
+            <td>Strap</td>
+            <td>Metal Bracelet</td>
+          </tr>
+          <tr>
+            <td>Water Resistance</td>
+            <td>30 Metres</td>
+          </tr>
+          <tr>
+            <td>Dial Color</td>
+            <td>Champagne / Black</td>
+          </tr>
+          <tr>
+            <td>Availability</td>
+            <td style="color: #16a34a; font-weight: 700;">In Stock ✓</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ GALLERY ═══════════════════ -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="section-header" data-motion="fade-up">
+        <span class="section-label">360° View</span>
+        <h2>Every angle,<br>a masterpiece</h2>
+      </div>
+      <!-- Desktop grid / Mobile horizontal scroll -->
+      <div class="gallery-scroll-wrap">
+        <div class="gallery-grid" data-motion="scale" data-delay="120">
+          <div class="g-item"><img
+              src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800&q=85&auto=format&fit=crop"
+              alt="Watch angle 1"
+              loading="lazy" /></div>
+          <div class="g-item"><img
+              src="https://images.unsplash.com/photo-1548171916-c8fd5d56f7b5?w=600&q=85&auto=format&fit=crop"
+              alt="Watch angle 2"
+              loading="lazy" /></div>
+          <div class="g-item"><img
+              src="https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=600&q=85&auto=format&fit=crop"
+              alt="Watch angle 3"
+              loading="lazy" /></div>
+          <div class="g-item"><img
+              src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=600&q=85&auto=format&fit=crop"
+              alt="Watch angle 4"
+              loading="lazy" /></div>
+          <div class="g-item"><img
+              src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=600&q=85&auto=format&fit=crop"
+              alt="Watch angle 5"
+              loading="lazy" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FEATURES ═══════════════════ -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header" data-motion="fade-up">
+        <span class="section-label">Why SW8434</span>
+        <h2 style="color: var(--dark);">Built for those who<br>demand excellence</h2>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-card" data-motion="fade-up" data-delay="0">
+          <div class="fc-icon"><i class="fa-solid fa-gem"></i></div>
+          <div class="fc-title">7AA Premium Grade</div>
+          <div class="fc-body">The finest mechanical movement grade available in imported watches — precise, reliable,
+            and built to last decades.</div>
+        </div>
+        <div class="feat-card" data-motion="fade-up" data-delay="80">
+          <div class="fc-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="fc-title">Scratch-Proof Crystal</div>
+          <div class="fc-body">Mineral crystal glass engineered to resist daily wear, keeping the face pristine and
+            clear for years of use.</div>
+        </div>
+        <div class="feat-card" data-motion="fade-up" data-delay="160">
+          <div class="fc-icon"><i class="fa-solid fa-droplet"></i></div>
+          <div class="fc-title">Water Resistant 30m</div>
+          <div class="fc-body">IP66-level water resistance ensures your watch stays protected through rain, splashes,
+            and light submersion.</div>
+        </div>
+        <div class="feat-card" data-motion="fade-up" data-delay="0">
+          <div class="fc-icon"><i class="fa-solid fa-crown"></i></div>
+          <div class="fc-title">Rolex-Inspired Design</div>
+          <div class="fc-body">Draws from the iconic silhouette of the world's most recognized luxury watch —
+            unmistakably regal.</div>
+        </div>
+        <div class="feat-card" data-motion="fade-up" data-delay="80">
+          <div class="fc-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="fc-title">Express Delivery</div>
+          <div class="fc-body">Pan-India fast delivery with real-time tracking. Your watch arrives within 3–5 business
+            days, packaged beautifully.</div>
+        </div>
+        <div class="feat-card" data-motion="fade-up" data-delay="160">
+          <div class="fc-icon"><i class="fa-solid fa-rotate-left"></i></div>
+          <div class="fc-title">Hassle-Free Returns</div>
+          <div class="fc-body">Not satisfied? No problem. Our easy 7-day return policy ensures every purchase is a
+            risk-free decision.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header" data-motion="fade-up">
+        <span class="section-label" style="color: var(--gold);">Testimonials</span>
+        <h2>Loved by <em style="font-style:italic; color:var(--gold-light);">thousands</em><br>across India</h2>
+      </div>
+      <div class="test-grid">
+        <div class="test-card" data-motion="fade-up" data-delay="0">
+          <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="test-text">"Absolutely stunning watch. Everyone at the office thinks I spent a fortune on it. The
+            quality is unbelievable for the price. Highly recommend!"</p>
+          <div class="test-author">
+            <div class="test-avatar">R</div>
+            <div>
+              <div class="test-name">Rahul Mehta</div>
+              <div class="test-loc">Mumbai, Maharashtra</div>
+            </div>
+          </div>
+        </div>
+        <div class="test-card" data-motion="fade-up" data-delay="100">
+          <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="test-text">"Gifted this to my husband on our anniversary. He was so impressed by the packaging and
+            finishing. The metallic strap feels premium and solid."</p>
+          <div class="test-author">
+            <div class="test-avatar">P</div>
+            <div>
+              <div class="test-name">Priya Sharma</div>
+              <div class="test-loc">Delhi, NCR</div>
+            </div>
+          </div>
+        </div>
+        <div class="test-card" data-motion="fade-up" data-delay="200">
+          <div class="test-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <p class="test-text">"Super fast delivery, product exactly as shown. The watch is heavy and feels luxurious.
+            Cannot believe I got this at ₹1,999. Will buy more."</p>
+          <div class="test-author">
+            <div class="test-avatar">A</div>
+            <div>
+              <div class="test-name">Arvind Singh</div>
+              <div class="test-loc">Bengaluru, Karnataka</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ URGENCY / COUNTDOWN ═══════════════════ -->
+  <section class="urgency-section">
+    <div class="container">
+      <div class="urgency-inner">
+        <span class="section-label">⚡ Limited Time Offer</span>
+        <h2 data-motion="fade-up">Only <em>7 units</em><br>remaining today</h2>
+        <p class="urgency-sub" data-motion="fade-up" data-delay="100">12 people are viewing this right now. Offer
+          expires in:</p>
+        <div class="countdown" data-motion="scale" data-delay="200">
+          <div class="cd-block">
+            <div class="cd-num" id="cd-h">05</div>
+            <div class="cd-label">Hours</div>
+          </div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block">
+            <div class="cd-num" id="cd-m">44</div>
+            <div class="cd-label">Minutes</div>
+          </div>
+          <div class="cd-sep">:</div>
+          <div class="cd-block">
+            <div class="cd-num" id="cd-s">12</div>
+            <div class="cd-label">Seconds</div>
+          </div>
+        </div>
+        <div class="stock-bar-wrap" data-motion="fade-up" data-delay="300">
+          <div class="stock-meta"><span>Sold: 93 of 100 units</span><span style="color:var(--gold)">72% gone</span>
+          </div>
+          <div class="stock-bar-bg">
+            <div class="stock-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo">Shoes<span>World</span></span>
+          <p>Premium fashion accessories delivered across India. Quality you can trust, at prices you'll love.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#">Men's Watches</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">New Arrivals</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Policies</h4>
+          <ul>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Refunds</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">support@shoesworld.in</a></li>
+            <li><a href="#">+91 98765 43210</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ShoesWorld. All rights reserved.</p>
+        <p>Made with <span style="color:var(--gold)">♥</span> in India</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY -->
+  <div class="sticky-bar" id="sticky-bar">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+      <span style="color:rgba(255,255,255,0.5);font-size:0.75rem;">SW8434 · Imported Rolex Watch</span>
+      <span
+        style="color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;">₹1,999</span>
+    </div>
+    <button class="btn-primary" onclick="handleCart()" style="width:100%;padding:14px;">
+      <i class="fa-solid fa-bag-shopping"></i> &nbsp; Buy Now — ₹1,999
+    </button>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast">
+    <div class="toast-inner">
+      <div class="toast-dot"></div>
+      <div>
+        <div style="font-weight:600;">Added to Cart!</div>
+        <div style="color:rgba(255,255,255,0.4);font-size:0.75rem;margin-top:2px;">SW8434 — ₹1,999</div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

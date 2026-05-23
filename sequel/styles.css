@@ -1,0 +1,495 @@
+/* 
+    L'Horizon Luxury Hotel - Motion System
+    Senior Frontend Motion Engineer
+*/
+
+:root {
+    /* Sophisticated Palette */
+    --color-bg: #fcfbf7; /* Off-white cream */
+    --color-text: #1a1a1a;
+    --color-text-dim: #666666;
+    --color-accent: #c5a059; /* Gold accent */
+    --color-dark: #0f0f0f;
+    --color-white: #ffffff;
+    --color-border: rgba(0, 0, 0, 0.1);
+    
+    /* Typography */
+    --font-heading: 'Inter', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --section-padding: 10rem 0;
+    --container-width: 1400px;
+    --container-padding: 0 4rem;
+    
+    /* Easing */
+    --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 6rem 0;
+        --container-padding: 0 1.5rem;
+    }
+}
+
+/* Base Styles */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: initial;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    cursor: none; /* Hide default cursor */
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease-out, background 0.3s ease;
+}
+
+.custom-cursor.active {
+    transform: scale(4);
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Pre-loader */
+.loader {
+    position: fixed;
+    inset: 0;
+    background: var(--color-dark);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color-white);
+}
+
+.loader__logo {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+}
+
+.loader__progress-wrap {
+    width: 200px;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.loader__progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--color-accent);
+}
+
+/* Typography Utilities */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.title-lg { font-size: clamp(3.5rem, 9vw, 8rem); }
+.title-md { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+.title-sm { font-size: clamp(1.5rem, 3vw, 2rem); }
+
+p {
+    font-size: clamp(1rem, 1.2vw, 1.25rem);
+    color: var(--color-text-dim);
+}
+
+.text-upper {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.section-padding { padding: var(--section-padding); }
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.4s var(--ease-expo);
+    cursor: none; /* Custom cursor handles this */
+    border: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.btn--dark {
+    background: var(--color-dark);
+    color: var(--color-white);
+}
+
+.btn--dark:hover {
+    background: var(--color-accent);
+    transform: translateY(-5px);
+}
+
+.btn--outline {
+    background: transparent;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+}
+
+.btn--outline:hover {
+    background: var(--color-text);
+    color: var(--color-bg);
+}
+
+/* --- 1. Hero Section --- */
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+}
+
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: transform;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    z-index: 0;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero__subtitle {
+    margin-bottom: 2rem;
+    color: var(--color-white);
+}
+
+/* --- 2. Intro Section --- */
+.intro {
+    text-align: center;
+}
+
+.intro__content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro p {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.3;
+    color: var(--color-text);
+}
+
+/* --- 3. Rooms Section --- */
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.room-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.room-card__img-wrap {
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.room-card__img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s var(--ease-expo);
+}
+
+.room-card:hover .room-card__img-wrap img {
+    transform: scale(1.1);
+}
+
+.room-card__info h3 {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 992px) {
+    .rooms-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+    .rooms-grid { grid-template-columns: 1fr; }
+}
+
+/* --- 4. Experience Section (Pinned) --- */
+.experience {
+    position: relative;
+    background: var(--color-dark);
+    color: var(--color-white);
+}
+
+.experience__sticky {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience__img-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+}
+
+.experience__img-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.experience__content-wrap {
+    width: 100%;
+    z-index: 2;
+}
+
+.experience__item {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.experience__item.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- 5. Gallery Section --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 1.5rem;
+}
+
+.gallery__item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery__item--large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* --- 6. Reviews Section --- */
+.reviews-scroll {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+.review-card {
+    min-width: 450px;
+    padding: 4rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+}
+
+.review-card .quote {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .review-card { min-width: 300px; padding: 2rem; }
+}
+
+/* --- 7. Location Section --- */
+.location-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.location__map {
+    height: 600px;
+    background: #e0e0e0;
+    overflow: hidden;
+}
+
+.location__map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 992px) {
+    .location-wrap { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* --- 8. CTA Section --- */
+.cta-banner {
+    background: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta__inner {
+    padding: 12rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.cta__bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.cta__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- 9. Footer --- */
+.footer {
+    padding: 6rem 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+}
+
+.footer__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.footer h4 {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer li {
+    margin-bottom: 1rem;
+}
+
+.footer a {
+    color: var(--color-text-dim);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--color-accent);
+}
+
+/* Masking Utilities */
+.mask {
+    overflow: hidden;
+    display: block;
+}
+
+.mask-inner {
+    display: block;
+    will-change: transform;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body:has(.dark:checked) {
+        background-color: #000;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+    <form>
+      <input type="text" placeholder="Add a new task" id="taskInput" />
+      <button type="submit">Add Task</button>
+    </form>
+    <ul></ul>
+    <input type="checkbox" class="dark" />
+    <script>
+      let name = "sree";
+      let age = 22;
+      let city = "hyderabad";
+      let country = "india";
+      let isStudent = false;
+      console.log(name, age, city, country, isStudent);
+
+      const numbers = [1, 2, 3, 4, 5];
+      const evens = numbers.filter((num) => num % 2 === 0);
+      console.log(evens); // [2, 4]
+
+      const taskInput = document.getElementById("taskInput");
+      const ul = document.querySelector("ul");
+      document
+        .querySelector("button")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          console.log(taskInput.value.trim(""));
+          if (taskInput.value.trim() !== "") {
+            const li = document.createElement("li");
+            li.textContent = taskInput.value;
+            ul.appendChild(li);
+            taskInput.value = "";
+          }
+        });
+    </script>
+  </body>
+</html>

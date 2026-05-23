@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Premium Section Animation Clone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#">YourBrand</a>
+    <nav aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#stories">Stories</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" data-section="hero">
+      <div class="hero__text">
+        <p class="eyebrow js-reveal">Digital products for modern teams</p>
+        <h1 class="js-split">Build dependable products with premium UX.</h1>
+        <p class="hero__lead js-reveal">Use your own website content here. This template recreates the animation behavior, not the reference website branding or content.</p>
+        <a class="button js-reveal" href="#contact">Start a project</a>
+      </div>
+
+      <div class="hero__media js-hero-media" aria-hidden="true">
+        <div class="phone-card phone-card--main"></div>
+        <div class="phone-card phone-card--small"></div>
+        <div class="phone-card phone-card--wide"></div>
+      </div>
+    </section>
+
+    <section class="intro section section--compact">
+      <h2 class="js-split">We design, build, and scale digital experiences with clarity, craft, and useful motion.</h2>
+    </section>
+
+    <section id="services" class="section cards-section">
+      <div class="section-heading">
+        <p class="eyebrow js-reveal">Services</p>
+        <h2 class="js-split">Reusable animation patterns for every major section.</h2>
+      </div>
+
+      <div class="card-grid js-stagger">
+        <article class="card">
+          <div class="card__media card__media--one"></div>
+          <h3>Product Design</h3>
+          <p>Research, UX, UI, prototyping, and scalable design systems.</p>
+        </article>
+        <article class="card">
+          <div class="card__media card__media--two"></div>
+          <h3>Web Development</h3>
+          <p>Responsive frontend builds with animation-ready structure.</p>
+        </article>
+        <article class="card">
+          <div class="card__media card__media--three"></div>
+          <h3>Brand Systems</h3>
+          <p>Visual systems that stay consistent across touchpoints.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section split-section">
+      <div class="split-card js-from-left">
+        <p class="eyebrow">Mission</p>
+        <h2>Create useful products that people trust.</h2>
+        <p>Left-side content enters from the left, matching the opposing-block rhythm often used in premium landing pages.</p>
+      </div>
+
+      <div class="split-card js-from-right">
+        <p class="eyebrow">Vision</p>
+        <h2>Make high-quality digital experiences accessible.</h2>
+        <p>Right-side content enters with a slight delay for a polished section reveal.</p>
+      </div>
+    </section>
+
+    <section class="section stats-section">
+      <div class="section-heading">
+        <p class="eyebrow js-reveal">Impact</p>
+        <h2 class="js-split">Numbers that count up when visible.</h2>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat js-stat">
+          <div><strong data-count="60">0</strong><span>M+</span></div>
+          <p>users reached</p>
+        </div>
+        <div class="stat js-stat">
+          <div><strong data-count="250">0</strong><span>+</span></div>
+          <p>projects delivered</p>
+        </div>
+        <div class="stat js-stat">
+          <div><strong data-count="10">0</strong><span>+</span></div>
+          <p>industries served</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stories" class="section news-section">
+      <div class="section-heading">
+        <p class="eyebrow js-reveal">Stories</p>
+        <h2 class="js-split">Editorial cards with masked media reveals.</h2>
+      </div>
+
+      <div class="card-grid js-stagger">
+        <article class="news-card">
+          <div class="news-card__image news-card__image--one"></div>
+          <p>Case Study</p>
+          <h3>How we improved onboarding conversion</h3>
+        </article>
+        <article class="news-card">
+          <div class="news-card__image news-card__image--two"></div>
+          <p>Insight</p>
+          <h3>Designing scalable product systems</h3>
+        </article>
+        <article class="news-card">
+          <div class="news-card__image news-card__image--three"></div>
+          <p>Update</p>
+          <h3>What premium motion adds to UX</h3>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section cta-section">
+      <p class="eyebrow js-reveal">Contact</p>
+      <h2 class="js-split">Let’s build something useful.</h2>
+      <a class="button js-reveal" href="mailto:hello@example.com">Contact us</a>
+    </section>
+  </main>
+
+  <footer class="footer js-footer">
+    <p>© 2026 YourBrand. Replace with your own content.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

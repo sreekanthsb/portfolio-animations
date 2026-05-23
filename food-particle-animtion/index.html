@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrbanBite | Premium Cloud Kitchen Experience</title>
+  <meta name="description"
+    content="Experience the finest gourmet food delivered to your doorstep. UrbanBite offers a curated selection of artisan pizzas, premium burgers, and fresh garden salads.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Noise Texture Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-follower" id="cursor-follower"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <!-- Background Layers -->
+  <div class="bg-container">
+    <canvas id="particle-canvas"></canvas>
+    <div class="glow-circle glow-1"></div>
+    <div class="glow-circle glow-2"></div>
+    <div class="glow-circle glow-3"></div>
+  </div>
+
+  <header class="header">
+    <nav class="nav container">
+      <div class="logo">Urban<span>Bite</span></div>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Menu</a>
+        <a href="#" class="nav-link">Kitchens</a>
+        <a href="#" class="nav-link">About</a>
+        <button class="btn btn-outline">Order Now</button>
+      </div>
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="container hero-wrapper">
+        <!-- Left Content -->
+        <div class="hero-content">
+          <h1 class="hero-title" id="hero-title">
+            Elevate Your <span class="highlight">Gourmet</span> Dining Experience
+          </h1>
+          <p class="hero-description" id="hero-description">
+            Curated flavors from the world's best chefs, delivered with clinical precision to your doorstep. The future
+            of cloud kitchens is here.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary">Explore Menu</button>
+            <button class="btn btn-text">How it Works <span class="arrow">→</span></button>
+          </div>
+        </div>
+
+        <!-- Right Visuals -->
+        <div class="hero-visuals" id="hero-visuals">
+          <div class="food-layer layer-1" data-depth="0.2">
+            <div class="food-card" data-tilt>
+              <img src="img/1.jpeg" alt="Artisan Pizza" class="food-img">
+            </div>
+          </div>
+          <div class="food-layer layer-2" data-depth="0.5">
+            <div class="food-card" data-tilt>
+              <img src="img/2.jpeg" alt="Premium Burger" class="food-img">
+            </div>
+          </div>
+          <div class="food-layer layer-3" data-depth="0.8">
+            <div class="food-card" data-tilt>
+              <img src="img/3.jpeg" alt="Fresh Salad" class="food-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Video Section -->
+    <section class="video-section section">
+      <div class="container">
+        <div class="section-header center">
+          <h2 class="section-title">The Art of <span class="highlight">Cooking</span></h2>
+          <p class="section-subtitle">A glimpse into our clinical precision and culinary passion.</p>
+        </div>
+        <div class="video-wrapper" data-scroll-reveal>
+          <video autoplay muted loop playsinline class="bg-video">
+            <source src="https://www.pexels.com/download/video/5898377/" type="video/mp4">
+          </video>
+          <div class="video-overlay">
+            <div class="play-btn-large">
+              <span>EXPLORE KITCHEN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section">
+      <div class="container">
+        <div class="services-grid">
+          <div class="service-card" data-scroll-reveal>
+            <div class="service-img-wrap">
+              <img src="img/3.jpeg" alt="Michelin Chefs">
+            </div>
+            <h3>Gourmet Mastery</h3>
+            <p>Our kitchens are led by Michelin-starred talent, ensuring every dish is a masterpiece of flavor and
+              presentation.</p>
+          </div>
+          <div class="service-card" data-scroll-reveal>
+            <div class="service-img-wrap">
+              <img src="img/5.jpeg" alt="Precision Delivery">
+            </div>
+            <h3>Swift Precision</h3>
+            <p>We've optimized every second of the delivery path, guaranteeing your meal arrives at the perfect
+              temperature.</p>
+          </div>
+          <div class="service-card" data-scroll-reveal>
+            <div class="service-img-wrap">
+              <img src="img/3.jpeg" alt="Tech Platform">
+            </div>
+            <h3>Seamless Tech</h3>
+            <p>Our proprietary platform offers real-time tracking and intelligent recommendations tailored to your
+              palate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section">
+      <div class="container">
+        <div class="faq-wrapper">
+          <div class="faq-info">
+            <h2 class="section-title">Curiosity <br><span class="highlight">Answered</span></h2>
+            <p class="section-subtitle">Everything you need to know about the UrbanBite experience.</p>
+            <button class="btn btn-outline">Ask More</button>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item" data-scroll-reveal>
+              <div class="faq-question">
+                <span>How do you maintain food quality?</span>
+                <span class="plus">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>We use specialized temperature-controlled packaging and a fleet of electric vehicles to ensure
+                  minimal heat loss during transit.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-scroll-reveal>
+              <div class="faq-question">
+                <span>What are your safety standards?</span>
+                <span class="plus">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Our kitchens operate with clinical grade sanitization protocols, with real-time health monitoring of
+                  all staff members.</p>
+              </div>
+            </div>
+            <div class="faq-item" data-scroll-reveal>
+              <div class="faq-question">
+                <span>Do you offer corporate catering?</span>
+                <span class="plus">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Yes, we have a dedicated concierge service for corporate events, providing tailored menus and on-site
+                  kitchen setups.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo">Urban<span>Bite</span></div>
+          <p>Redefining the standard of cloud kitchens globally. Excellence in every bite.</p>
+        </div>
+        <div class="footer-links">
+          <div class="link-group">
+            <h4>Explore</h4>
+            <a href="#">Menu</a>
+            <a href="#">Kitchens</a>
+            <a href="#">Nutrition</a>
+          </div>
+          <div class="link-group">
+            <h4>Company</h4>
+            <a href="#">Our Story</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+          </div>
+          <div class="link-group">
+            <h4>Support</h4>
+            <a href="#">Contact</a>
+            <a href="#">FAQ</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 UrbanBite. All rights reserved.</p>
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

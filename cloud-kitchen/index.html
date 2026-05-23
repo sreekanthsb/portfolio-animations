@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Kitchen | Premium Food Brand</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#111111',
+                        'primary-hover': '#ffffff',
+                        secondary: '#1e293a',
+                        'secondary-hover': '#8dc59e',
+                        'secondary-light': '#777777',
+                        background: '#f7f7f7',
+                        border: '#e5e5e5'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'xl': '16px',
+                        '2xl': '24px',
+                        '3xl': '32px'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-background text-primary overflow-x-hidden font-sans">
+
+    <!-- Header -->
+    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-500 py-5 bg-transparent">
+        <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter text-white logo-text">
+                Cloud<span class="text-secondary-hover">Kitchen</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#hero"
+                    class="text-white hover:text-secondary-hover transition-colors nav-link font-medium">Home</a>
+                <a href="#about"
+                    class="text-white hover:text-secondary-hover transition-colors nav-link font-medium">About Us</a>
+
+                <!-- Dropdown -->
+                <div class="relative group">
+                    <a href="#menu"
+                        class="text-white hover:text-secondary-hover transition-colors flex items-center gap-2 nav-link font-medium">
+                        Menus <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </a>
+                    <div
+                        class="absolute top-full left-0 mt-4 w-48 glass-dark rounded-xl opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 shadow-2xl overflow-hidden border border-[rgba(255,255,255,0.05)]">
+                        <a href="#menu"
+                            class="block px-5 py-3 text-white hover:bg-secondary hover:text-secondary-hover transition-colors border-b border-[rgba(255,255,255,0.05)]"
+                            data-filter="veg">Veg</a>
+                        <a href="#menu"
+                            class="block px-5 py-3 text-white hover:bg-secondary hover:text-secondary-hover transition-colors"
+                            data-filter="non-veg">Non-Veg</a>
+                    </div>
+                </div>
+
+                <a href="#footer"
+                    class="text-white hover:text-secondary-hover transition-colors nav-link font-medium">Contact Us</a>
+            </nav>
+            <button class="md:hidden text-white hover:text-secondary-hover text-2xl transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero"
+            class="relative w-full h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-primary text-white pt-20">
+            <!-- Three.js Canvas -->
+            <canvas id="three-canvas" class="absolute inset-0 z-0 pointer-events-none"></canvas>
+
+            <div
+                class="container mx-auto px-6 lg:px-12 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center h-full">
+                <div class="hero-text-wrap flex flex-col items-start pt-10 md:pt-0">
+                    <span
+                        class="inline-block py-1.5 px-4 rounded-full border border-[rgba(141,197,158,0.5)] bg-[rgba(141,197,158,0.1)] text-secondary-hover text-sm font-semibold tracking-wide mb-6 hero-elem backdrop-blur-sm">
+                        PREMIUM CLOUD KITCHEN
+                    </span>
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 hero-elem">
+                        Savor the <br> <span
+                            class="text-secondary-hover italic font-semibold border-b-4 border-secondary-hover inline-block mt-2">Finest</span>
+                        Flavors
+                    </h1>
+                    <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-md hero-elem leading-relaxed">
+                        Experience gourmet meals crafted by top-tier chefs, delivered piping hot to your doorstep.
+                    </p>
+                    <div class="flex gap-4 hero-elem">
+                        <button
+                            class="bg-secondary-hover text-primary font-bold py-4 px-8 rounded-xl hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(141,197,158,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] transform hover:-translate-y-1">
+                            Order Now
+                        </button>
+                        <button
+                            class="glass-btn text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:-translate-y-1">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+
+                <div
+                    class="relative w-full aspect-square flex items-center justify-center hero-image-wrap mt-10 md:mt-0">
+                    <!-- Glow effect -->
+                    <div
+                        class="absolute inset-0 bg-secondary-hover rounded-full opacity-20 blur-[100px] scale-75 animate-pulse-slow">
+                    </div>
+
+                    <div
+                        class="relative w-full max-w-md aspect-square rounded-full border-2 border-[rgba(255,255,255,0.1)] p-4 glass grid place-items-center z-10">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Delicious Food"
+                            class="w-full h-full object-cover rounded-full shadow-2xl hero-image spin-slow">
+                    </div>
+
+                    <!-- Floating cards -->
+                    <div
+                        class="absolute top-10 right-0 md:-right-4 glass-dark p-4 rounded-xl flex items-center gap-4 shadow-2xl z-20 transition-transform cursor-pointer hero-floating hero-floating-1 border border-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.1)]">
+                        <div
+                            class="w-12 h-12 rounded-full bg-secondary-hover flex items-center justify-center text-primary text-xl shadow-lg">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white leading-tight">4.9/5</h4>
+                            <p class="text-xs text-gray-400">Customer Rating</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute bottom-10 left-0 md:-left-4 glass-dark p-4 rounded-xl flex items-center gap-4 shadow-2xl z-20 transition-transform cursor-pointer hero-floating hero-floating-2 border border-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.1)]">
+                        <div
+                            class="w-12 h-12 rounded-full bg-red-500/20 text-red-500 border border-red-500/30 flex items-center justify-center text-xl shadow-lg">
+                            <i class="fa-solid fa-fire text-red-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white leading-tight">Hot & Fresh</h4>
+                            <p class="text-xs text-gray-400">30 mins delivery</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mouse scroll indicator -->
+            <div
+                class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-70 animate-bounce">
+                <span class="text-xs uppercase tracking-widest text-gray-400">Scroll</span>
+                <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center p-1">
+                    <div class="w-1 h-2 bg-secondary-hover rounded-full"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Menu Section -->
+        <section class="py-24 bg-background relative z-10 overflow-hidden" id="categories">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16 sec-title">
+                    <span
+                        class="cat-heading-line text-secondary-hover font-bold tracking-widest uppercase text-sm mb-3 block"
+                        style="will-change:transform,opacity,filter">Top
+                        Picks</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-primary cat-heading-line"
+                        style="will-change:transform,opacity,filter">Explore Our Categories</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Category Card 1 -->
+                    <div class="bg-white rounded-[28px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 group border border-border category-card relative overflow-hidden"
+                        style="will-change:transform,opacity">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-secondary-hover/10 rounded-bl-[100px] -z-0 transition-all duration-700 ease-in-out group-hover:w-full group-hover:h-full group-hover:rounded-none group-hover:bg-secondary-hover/20">
+                        </div>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-orange-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-inner relative z-10 border border-orange-100 card-img-wrap"
+                            style="will-change:transform,opacity">
+                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                                alt="Pizza" class="w-[85%] h-[85%] object-cover rounded-full">
+                        </div>
+                        <div class="text-center relative z-10">
+                            <h3 class="text-xl font-bold mb-3 text-primary group-hover:text-secondary-hover transition-colors card-title"
+                                style="will-change:transform,opacity">
+                                Italian Pizza</h3>
+                            <p class="text-secondary-light text-sm mb-6 leading-relaxed card-desc"
+                                style="will-change:transform,opacity">Authentic wood-fired pizzas
+                                with fresh farm toppings.</p>
+                            <a href="#menu"
+                                class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm hover:shadow-md transform group-hover:scale-110 card-btn cat-arrow-btn"
+                                style="will-change:transform,opacity">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category Card 2 -->
+                    <div class="bg-white rounded-[28px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 group border border-border category-card relative overflow-hidden"
+                        style="will-change:transform,opacity">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-bl-[100px] -z-0 transition-all duration-700 ease-in-out group-hover:w-full group-hover:h-full group-hover:rounded-none group-hover:bg-red-500/20">
+                        </div>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-red-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-inner relative z-10 border border-red-100 card-img-wrap"
+                            style="will-change:transform,opacity">
+                            <img src="https://images.pexels.com/photos/32810338/pexels-photo-32810338.jpeg?_gl=1*1vjcoh1*_ga*OTEwNTA3OTUzLjE3NDQxMTExNDM.*_ga_8JE65Q40S6*czE3NzQ4NTQ1MjgkbzM3JGcxJHQxNzc0ODU2NjQ2JGo1OCRsMCRoMA.."
+                                alt="Burger" class="w-[85%] h-[85%] object-cover rounded-full">
+                        </div>
+                        <div class="text-center relative z-10">
+                            <h3 class="text-xl font-bold mb-3 text-primary group-hover:text-red-500 transition-colors card-title"
+                                style="will-change:transform,opacity">
+                                Juicy Burgers</h3>
+                            <p class="text-secondary-light text-sm mb-6 leading-relaxed card-desc"
+                                style="will-change:transform,opacity">Premium beef patties with
+                                secret sauces and fresh buns.</p>
+                            <a href="#menu"
+                                class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm hover:shadow-md transform group-hover:scale-110 card-btn cat-arrow-btn"
+                                style="will-change:transform,opacity">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category Card 3 -->
+                    <div class="bg-white rounded-[28px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 group border border-border category-card relative overflow-hidden"
+                        style="will-change:transform,opacity">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-bl-[100px] -z-0 transition-all duration-700 ease-in-out group-hover:w-full group-hover:h-full group-hover:rounded-none group-hover:bg-green-500/20">
+                        </div>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-green-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-inner relative z-10 border border-green-100 card-img-wrap"
+                            style="will-change:transform,opacity">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                                alt="Salad" class="w-[85%] h-[85%] object-cover rounded-full">
+                        </div>
+                        <div class="text-center relative z-10">
+                            <h3 class="text-xl font-bold mb-3 text-primary group-hover:text-green-500 transition-colors card-title"
+                                style="will-change:transform,opacity">
+                                Healthy Salads</h3>
+                            <p class="text-secondary-light text-sm mb-6 leading-relaxed card-desc"
+                                style="will-change:transform,opacity">Fresh, crisp greens with
+                                low-calorie organic dressings.</p>
+                            <a href="#menu"
+                                class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm hover:shadow-md transform group-hover:scale-110 card-btn cat-arrow-btn"
+                                style="will-change:transform,opacity">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Category Card 4 -->
+                    <div class="bg-white rounded-[28px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 group border border-border category-card relative overflow-hidden"
+                        style="will-change:transform,opacity">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-bl-[100px] -z-0 transition-all duration-700 ease-in-out group-hover:w-full group-hover:h-full group-hover:rounded-none group-hover:bg-yellow-500/20">
+                        </div>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-yellow-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-inner relative z-10 border border-yellow-100 card-img-wrap"
+                            style="will-change:transform,opacity">
+                            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                                alt="Dessert" class="w-[85%] h-[85%] object-cover rounded-full">
+                        </div>
+                        <div class="text-center relative z-10">
+                            <h3 class="text-xl font-bold mb-3 text-primary group-hover:text-yellow-500 transition-colors card-title"
+                                style="will-change:transform,opacity">
+                                Sweet Desserts</h3>
+                            <p class="text-secondary-light text-sm mb-6 leading-relaxed card-desc"
+                                style="will-change:transform,opacity">Indulgent treats to satisfy
+                                your sweet cravings perfectly.</p>
+                            <a href="#menu"
+                                class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm hover:shadow-md transform group-hover:scale-110 card-btn cat-arrow-btn"
+                                style="will-change:transform,opacity">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-background overflow-hidden relative border-t border-border">
+            <!-- Aurora Background Effect -->
+            <div class="aurora-bg">
+                <div class="aurora-inner"></div>
+            </div>
+
+            <!-- Top Right Wave Animation -->
+            <div class="absolute -top-32 -right-32 w-[500px] h-[500px] opacity-10 pointer-events-none z-0">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+                    class="w-full h-full origin-center spin-slow">
+                    <path fill="#8dc59e"
+                        d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,79.6,-45.8C87.4,-32.6,89.9,-16.3,88.7,-0.7C87.4,14.9,82.4,29.8,74.3,42.9C66.1,56,54.8,67.3,41.4,75.1C27.9,82.9,13.9,87.2,-0.4,87.9C-14.8,88.6,-29.6,85.6,-42.6,78.2C-55.6,70.9,-66.8,59.2,-75.3,45.4C-83.8,31.6,-89.6,15.8,-89.4,0.1C-89.2,-15.6,-83.1,-31.2,-74.2,-44.6C-65.4,-57.9,-53.8,-69,-40.4,-75.8C-27.1,-82.6,-13.5,-85.1,1.1,-87C15.7,-88.9,31.5,-89.2,44.7,-76.4Z"
+                        transform="translate(100 100)" />
+                </svg>
+            </div>
+
+            <div
+                class="absolute top-0 right-0 w-1/3 h-full bg-background rounded-l-full -mr-[15%] hidden lg:block opacity-50 z-0">
+            </div>
+
+            <div class="container mx-auto px-6 lg:px-12 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+                    <!-- Left Image -->
+                    <div class="relative about-img-wrap" style="will-change:transform,opacity">
+                        <div class="absolute -inset-4 bg-secondary-hover/20 rounded-[40px] transform -rotate-3 z-0">
+                        </div>
+                        <div class="absolute -inset-4 bg-primary/5 rounded-[40px] transform rotate-3 z-0"></div>
+
+                        <div class="relative z-10 rounded-[32px] overflow-hidden shadow-2xl border-4 border-white about-img-inner" style="will-change:transform,clip-path">
+                            <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                                alt="Our Kitchen"
+                                class="w-full object-cover h-[550px] about-img-photo" style="will-change:transform">
+                        </div>
+
+                        <!-- Floating stat badge -->
+                        <div
+                            class="absolute -bottom-8 -right-4 lg:-right-10 bg-white p-6 rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.1)] z-20 flex items-center gap-5 about-badge about-badge-anim border border-gray-100" style="will-change:transform,opacity">
+                            <div
+                                class="w-16 h-16 bg-primary text-white flex items-center justify-center rounded-full text-2xl font-bold shadow-inner">
+                                10+
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xl leading-tight text-primary">Years of</h4>
+                                <p class="text-secondary-light font-medium mt-1">Experience</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Content -->
+                    <div class="about-content">
+                        <span class="text-secondary-hover font-bold tracking-widest uppercase text-sm mb-3 block about-text-line" style="will-change:transform,opacity,filter">Our
+                            Story</span>
+                        <h2
+                            class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-primary mb-8 leading-[1.1] about-text-line" style="will-change:transform,opacity,filter">
+                            Redefining the <br>Cloud Kitchen<br> Experience</h2>
+                        <p class="text-secondary-light mb-8 text-lg leading-relaxed font-light about-text-line" style="will-change:transform,opacity,filter">
+                            We started with a simple idea: bringing restaurant-quality meals straight to your dining
+                            table without the wait. Our state-of-the-art cloud kitchens are optimized for quality,
+                            speed, and absolute hygiene.
+                        </p>
+
+                        <ul class="space-y-5 mb-12">
+                            <li class="flex items-center gap-4 text-primary font-medium about-list-item text-lg" style="will-change:transform,opacity">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-secondary-hover/20 text-secondary-hover flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                Premium ingredients sourced directly from farms
+                            </li>
+                            <li class="flex items-center gap-4 text-primary font-medium about-list-item text-lg" style="will-change:transform,opacity">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-secondary-hover/20 text-secondary-hover flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                Eco-friendly and sustainable packaging
+                            </li>
+                            <li class="flex items-center gap-4 text-primary font-medium about-list-item text-lg" style="will-change:transform,opacity">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-secondary-hover/20 text-secondary-hover flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                Award-winning culinary team
+                            </li>
+                        </ul>
+
+                        <button
+                            class="bg-primary text-white font-bold py-4 px-8 rounded-xl hover:bg-secondary transition-all duration-300 about-btn about-text-line shadow-lg hover:shadow-xl transform hover:-translate-y-1" style="will-change:transform,opacity,filter">
+                            Discover More <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Banner & Partner Logos -->
+                <div class="mt-32 w-full pt-16 border-t border-border">
+                    <h3 class="text-center text-sm font-bold text-gray-400 uppercase tracking-[0.2em] mb-12 sec-title">
+                        Trusted By Foodies & Delivery Partners</h3>
+
+                    <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 partner-logos">
+                        <!-- Grayscale to color on hover -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Uber_Eats_2020_logo.svg/512px-Uber_Eats_2020_logo.svg.png"
+                            alt="Uber Eats"
+                            onerror="this.onerror=null;this.src='https://via.placeholder.com/120x40?text=Uber+Eats'"
+                            class="h-6 md:h-8 object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer hover:scale-110">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Zomato_Logo.svg/512px-Zomato_Logo.svg.png"
+                            alt="Zomato"
+                            onerror="this.onerror=null;this.src='https://via.placeholder.com/120x40?text=Zomato'"
+                            class="h-6 md:h-8 object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer hover:scale-110">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Swiggy_logo.svg/512px-Swiggy_logo.svg.png"
+                            alt="Swiggy"
+                            onerror="this.onerror=null;this.src='https://via.placeholder.com/120x40?text=Swiggy'"
+                            class="h-6 md:h-8 object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer hover:scale-110">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/DoorDash_Logo.svg/512px-DoorDash_Logo.svg.png"
+                            alt="DoorDash"
+                            onerror="this.onerror=null;this.src='https://via.placeholder.com/120x40?text=DoorDash'"
+                            class="h-5 md:h-6 object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer hover:scale-110">
+                    </div>
+
+                    <div
+                        class="w-full h-80 md:h-[450px] mt-24 relative rounded-[40px] overflow-hidden banner-img-wrap group shadow-2xl">
+                        <div
+                            class="absolute inset-0 bg-primary/60 z-10 group-hover:bg-primary/50 transition-colors duration-500">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+                            alt="Banner"
+                            class="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000 parallax-img">
+
+                        <div
+                            class="absolute inset-0 z-20 flex flex-col items-center justify-center text-white text-center px-6">
+                            <span
+                                class="inline-block py-1 px-3 rounded-full bg-[rgba(255,255,255,0.1)] backdrop-blur-md border border-[rgba(255,255,255,0.2)] text-sm font-semibold tracking-widest mb-6">SPECIAL
+                                OFFER</span>
+                            <h2 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Craving Something <span
+                                    class="text-secondary-hover italic">Special?</span></h2>
+                            <p class="text-lg md:text-xl mb-10 max-w-2xl font-light text-gray-200">Use code <span
+                                    class="bg-secondary-hover text-primary font-bold px-3 py-1 rounded mx-1 shadow-lg">FRESH20</span>
+                                for 20% off your first order.</p>
+                            <button
+                                class="bg-white text-primary font-bold py-4 px-10 rounded-xl hover:bg-secondary-hover hover:text-white transition-all duration-300 shadow-xl transform hover:-translate-y-1">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Menu Section -->
+        <section id="menu" class="py-24 bg-background relative border-t border-border" data-store-section>
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="flex flex-col lg:flex-row justify-between items-end mb-16 sec-title gap-8">
+                    <div>
+                        <span
+                            class="text-secondary-hover font-bold tracking-widest uppercase text-sm mb-3 block store-label">Our
+                            Store</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-primary kinetic-heading" id="store-heading"
+                            style="will-change:transform,opacity">Featured Dishes</h2>
+                    </div>
+
+                    <!-- Filter Tabs -->
+                    <div
+                        class="flex flex-wrap gap-2 bg-white p-2 rounded-2xl shadow-[0_5px_20px_rgba(0,0,0,0.03)] filter-tabs border border-border">
+                        <button
+                            class="filter-btn active px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 bg-primary text-white shadow-md transform scale-100"
+                            data-filter="all">All Items</button>
+                        <button
+                            class="filter-btn px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 text-secondary-light hover:bg-gray-50 hover:text-primary"
+                            data-filter="veg">Vegetarian</button>
+                        <button
+                            class="filter-btn px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 text-secondary-light hover:bg-gray-50 hover:text-primary"
+                            data-filter="non-veg">Non-Veg</button>
+                        <button
+                            class="filter-btn px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 text-secondary-light hover:bg-gray-50 hover:text-primary"
+                            data-filter="special">Specials</button>
+                    </div>
+                </div>
+
+                <!-- Menu Grid -->
+                <!-- We will generate food cards dynamically in JS to keep HTML clean or just add 6 cards here -->
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8" id="menu-grid">
+                    <!-- Cards will be included here via inline HTML -->
+                </div>
+
+                <div class="text-center mt-16 pt-8">
+                    <button
+                        class="border-2 border-primary text-primary font-bold py-4 px-10 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 group inline-flex items-center gap-2">
+                        View Full Menu <i
+                            class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event / Food Cards Section -->
+        <section class="py-24 bg-white relative z-10 border-t border-border">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16 sec-title">
+                    <span
+                        class="text-secondary-hover font-bold tracking-widest uppercase text-sm mb-3 block">Experiences</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-primary">Signature Events & Offers</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div
+                        class="relative overflow-hidden rounded-[32px] group aspect-video shadow-[0_5px_20px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                            alt="Event"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 p-10 w-full z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <span
+                                class="bg-secondary-hover text-primary text-xs font-bold px-4 py-1.5 rounded-full mb-5 inline-block shadow-md tracking-wider uppercase">Weekend
+                                Special</span>
+                            <h3 class="text-3xl font-bold text-white mb-4">Chef's Tasting Menu</h3>
+                            <p class="text-gray-300 mb-8 max-w-md font-light leading-relaxed">Experience a 5-course
+                                culinary journey meticulously curated by our executive chef, featuring seasonal
+                                farm-fresh ingredients.</p>
+                            <button
+                                class="bg-white text-primary font-bold py-3.5 px-8 rounded-xl hover:bg-secondary-hover hover:text-white transition-all duration-300 shadow-lg transform hover:-translate-y-1">Book
+                                Now</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="relative overflow-hidden rounded-[32px] group aspect-video shadow-[0_5px_20px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all duration-500">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                            alt="Event"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 p-10 w-full z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <span
+                                class="bg-red-500 text-white text-xs font-bold px-4 py-1.5 rounded-full mb-5 inline-block shadow-md tracking-wider uppercase">Limited
+                                Time</span>
+                            <h3 class="text-3xl font-bold text-white mb-4">Family Feast Combo</h3>
+                            <p class="text-gray-300 mb-8 max-w-md font-light leading-relaxed">The perfect weekend treat
+                                for the whole family at an unbeatable value. Includes appetizers, mains, and desserts.
+                            </p>
+                            <button
+                                class="bg-white text-primary font-bold py-3.5 px-8 rounded-xl hover:bg-secondary-hover hover:text-white transition-all duration-300 shadow-lg transform hover:-translate-y-1">Order
+                                Combo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="py-32 bg-primary text-white overflow-hidden relative" id="testimonials-sec">
+            <div
+                class="absolute inset-0 bg-[linear-gradient(rgba(17,17,17,0.8),rgba(17,17,17,0.9)),url('https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center bg-fixed opacity-30 mix-blend-overlay pointer-events-none">
+            </div>
+
+            <div
+                class="container mx-auto px-6 lg:px-12 mb-20 sec-title relative z-10 flex flex-col items-center text-center">
+                <span class="text-secondary-hover font-bold tracking-widest uppercase text-sm mb-3 block">Reviews</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">What Foodies Say</h2>
+                <p class="text-gray-400 max-w-xl text-lg">Don't just take our word for it. Here is what our lovely
+                    customers have to say about their experience.</p>
+            </div>
+
+            <!-- Horizontal scroll container -->
+            <div class="relative w-full h-[450px]" id="testimonial-track">
+                <div class="flex gap-8 absolute left-0 pr-12 lg:pr-48 pl-6 lg:pl-[calc((100vw-1200px)/2)]"
+                    id="testimonial-slider">
+                    <!-- Testimonial cards -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section class="py-24 bg-background relative z-10 border-t border-border">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 sec-title gap-6">
+                    <div>
+                        <span
+                            class="text-secondary-hover font-bold tracking-widest uppercase text-sm mb-3 block">Insights</span>
+                        <h2 class="text-4xl md:text-5xl font-bold text-primary">Latest From Blog</h2>
+                    </div>
+                    <a href="#"
+                        class="text-primary font-bold hover:text-secondary-hover transition-colors flex items-center gap-2 group">
+                        View All Posts <i
+                            class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Blog Card 1 -->
+                    <div
+                        class="bg-white rounded-[28px] overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group border border-border flex flex-col cursor-pointer">
+                        <div class="relative overflow-hidden h-64">
+                            <div
+                                class="absolute top-4 left-4 z-10 bg-white text-primary text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
+                                Oct 12, 2023</div>
+                            <img src="https://images.pexels.com/photos/9218776/pexels-photo-9218776.jpeg?_gl=1*1pg3cp8*_ga*OTEwNTA3OTUzLjE3NDQxMTExNDM.*_ga_8JE65Q40S6*czE3NzQ4NTQ1MjgkbzM3JGcxJHQxNzc0ODU2MzQxJGo1OSRsMCRoMA.."
+                                alt="Blog"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3
+                                class="text-2xl font-bold text-primary mb-4 group-hover:text-secondary-hover transition-colors leading-tight">
+                                The Secret Behind Our Award-Winning Recipes</h3>
+                            <p class="text-secondary-light mb-8 line-clamp-3 leading-relaxed font-light">Discover the
+                                culinary journey of our head chef and how we source the finest local ingredients for our
+                                dishes perfectly.</p>
+                            <span
+                                class="text-primary font-bold flex items-center gap-2 text-sm uppercase tracking-widest mt-auto group-hover:text-secondary-hover transition-colors">Read
+                                Article <i class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 2 -->
+                    <div
+                        class="bg-white rounded-[28px] overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group border border-border flex flex-col cursor-pointer">
+                        <div class="relative overflow-hidden h-64">
+                            <div
+                                class="absolute top-4 left-4 z-10 bg-white text-primary text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
+                                Sep 28, 2023</div>
+                            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Blog"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3
+                                class="text-2xl font-bold text-primary mb-4 group-hover:text-secondary-hover transition-colors leading-tight">
+                                Why Cloud Kitchens Are The Future of Dining</h3>
+                            <p class="text-secondary-light mb-8 line-clamp-3 leading-relaxed font-light">An in-depth
+                                look into the business model that's revolutionizing how urban areas consume high-quality
+                                restaurant food today.</p>
+                            <span
+                                class="text-primary font-bold flex items-center gap-2 text-sm uppercase tracking-widest mt-auto group-hover:text-secondary-hover transition-colors">Read
+                                Article <i class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 3 -->
+                    <div
+                        class="bg-white rounded-[28px] overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 group border border-border flex flex-col cursor-pointer">
+                        <div class="relative overflow-hidden h-64">
+                            <div
+                                class="absolute top-4 left-4 z-10 bg-white text-primary text-xs font-bold px-4 py-1.5 rounded-full shadow-md">
+                                Aug 15, 2023</div>
+                            <img src="https://images.pexels.com/photos/9213856/pexels-photo-9213856.jpeg?_gl=1*1hpl0ar*_ga*OTEwNTA3OTUzLjE3NDQxMTExNDM.*_ga_8JE65Q40S6*czE3NzQ4NTQ1MjgkbzM3JGcxJHQxNzc0ODU1NzgwJGo1NCRsMCRoMA.."
+                                alt="Blog"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <h3
+                                class="text-2xl font-bold text-primary mb-4 group-hover:text-secondary-hover transition-colors leading-tight">
+                                Top 10 Superfoods You Need In Your Diet Now</h3>
+                            <p class="text-secondary-light mb-8 line-clamp-3 leading-relaxed font-light">Learn about
+                                nutrient-dense ingredients that we incorporate into our healthy bowls and salads to
+                                boost your immunity.</p>
+                            <span
+                                class="text-primary font-bold flex items-center gap-2 text-sm uppercase tracking-widest mt-auto group-hover:text-secondary-hover transition-colors">Read
+                                Article <i class="fa-solid fa-chevron-right text-[10px]"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer"
+            class="bg-primary text-white pt-24 pb-10 border-t border-[rgba(255,255,255,0.05)] relative overflow-hidden">
+            <div
+                class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary-hover via-white to-secondary-hover opacity-20">
+            </div>
+
+            <div class="container mx-auto px-6 lg:px-12 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+                    <!-- Brand -->
+                    <div class="lg:col-span-4 footer-col">
+                        <a href="#"
+                            class="text-3xl font-bold tracking-tighter text-white logo-text mb-6 inline-block">Cloud<span
+                                class="text-secondary-hover">Kitchen</span></a>
+                        <p class="text-gray-400 mb-8 max-w-sm text-lg font-light leading-relaxed">
+                            Premium meals crafted by top chefs, delivered to your doorstep. Experience the finest
+                            flavors at your absolute convenience.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="#"
+                                class="w-12 h-12 rounded-full border border-[rgba(255,255,255,0.1)] flex items-center justify-center hover:bg-secondary-hover hover:border-secondary-hover hover:text-primary transition-all duration-300 group"><i
+                                    class="fa-brands fa-twitter group-hover:scale-110 transition-transform"></i></a>
+                            <a href="#"
+                                class="w-12 h-12 rounded-full border border-[rgba(255,255,255,0.1)] flex items-center justify-center hover:bg-secondary-hover hover:border-secondary-hover hover:text-primary transition-all duration-300 group"><i
+                                    class="fa-brands fa-instagram group-hover:scale-110 transition-transform"></i></a>
+                            <a href="#"
+                                class="w-12 h-12 rounded-full border border-[rgba(255,255,255,0.1)] flex items-center justify-center hover:bg-secondary-hover hover:border-secondary-hover hover:text-primary transition-all duration-300 group"><i
+                                    class="fa-brands fa-facebook-f group-hover:scale-110 transition-transform"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="lg:col-span-2 footer-col">
+                        <h4
+                            class="text-xl font-bold mb-6 text-white border-b border-[rgba(255,255,255,0.1)] pb-4 inline-block">
+                            Quick Links</h4>
+                        <ul class="space-y-4">
+                            <li><a href="#"
+                                    class="text-gray-400 hover:text-secondary-hover transition-colors flex items-center gap-2"><i
+                                        class="fa-solid fa-chevron-right text-[10px] text-secondary-hover"></i> Home</a>
+                            </li>
+                            <li><a href="#about"
+                                    class="text-gray-400 hover:text-secondary-hover transition-colors flex items-center gap-2"><i
+                                        class="fa-solid fa-chevron-right text-[10px] text-secondary-hover"></i> About
+                                    Us</a></li>
+                            <li><a href="#menu"
+                                    class="text-gray-400 hover:text-secondary-hover transition-colors flex items-center gap-2"><i
+                                        class="fa-solid fa-chevron-right text-[10px] text-secondary-hover"></i> Our
+                                    Menu</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Information -->
+                    <div class="lg:col-span-2 footer-col">
+                        <h4
+                            class="text-xl font-bold mb-6 text-white border-b border-[rgba(255,255,255,0.1)] pb-4 inline-block">
+                            Information</h4>
+                        <ul class="space-y-4">
+                            <li><a href="#"
+                                    class="text-gray-400 hover:text-secondary-hover transition-colors flex items-center gap-2"><i
+                                        class="fa-solid fa-chevron-right text-[10px] text-secondary-hover"></i> Privacy
+                                    Policy</a></li>
+                            <li><a href="#"
+                                    class="text-gray-400 hover:text-secondary-hover transition-colors flex items-center gap-2"><i
+                                        class="fa-solid fa-chevron-right text-[10px] text-secondary-hover"></i> Terms of
+                                    Service</a></li>
+                            <li><a href="#"
+                                    class="text-gray-400 hover:text-secondary-hover transition-colors flex items-center gap-2"><i
+                                        class="fa-solid fa-chevron-right text-[10px] text-secondary-hover"></i> Delivery
+                                    Areas</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="lg:col-span-4 footer-col">
+                        <h4
+                            class="text-xl font-bold mb-6 text-white border-b border-[rgba(255,255,255,0.1)] pb-4 inline-block">
+                            Contact Us</h4>
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-[rgba(255,255,255,0.05)] flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-location-dot text-secondary-hover"></i>
+                                </div>
+                                <span class="text-gray-400 leading-relaxed font-light">123 Culinary Boulevard,<br>Food
+                                    District, NY 10001</span>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-[rgba(255,255,255,0.05)] flex items-center justify-center flex-shrink-0">
+                                    <i class="fa-solid fa-phone text-secondary-hover"></i>
+                                </div>
+                                <span class="text-white font-medium text-lg">+1 (555) 123-4567</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-[rgba(255,255,255,0.05)] pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400 font-light">
+                    <p>&copy; 2023 CloudKitchen. All rights reserved.</p>
+                    <p class="mt-4 md:mt-0">Designed seamlessly for <span
+                            class="text-secondary-hover font-semibold">Foodies</span>.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Modal Overlay -->
+    <div id="food-modal" class="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none opacity-0">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-primary/90 backdrop-blur-md" id="modal-backdrop"></div>
+        <!-- Modal Content -->
+        <div class="bg-white rounded-[32px] w-full max-w-4xl max-h-[90vh] overflow-y-auto relative z-10 shadow-2xl scale-95 opacity-0 transform"
+            id="modal-content">
+            <button
+                class="absolute top-6 right-6 w-12 h-12 bg-background/80 backdrop-blur-sm rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-300 z-20 shadow-lg"
+                id="close-modal">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+                <div class="h-64 md:h-full bg-gray-100 relative overflow-hidden" id="modal-img-container">
+                    <img src="" alt="Food Item" id="modal-img" class="w-full h-full object-cover">
+                </div>
+                <div class="p-10 lg:p-12 flex flex-col justify-center">
+                    <div class="flex justify-between items-start mb-4 gap-4">
+                        <h3 class="text-3xl font-bold text-primary leading-tight" id="modal-title">Dish Name</h3>
+                    </div>
+                    <span class="text-3xl font-bold text-secondary-hover block mb-6" id="modal-price">$0.00</span>
+
+                    <div class="flex gap-2 mb-8" id="modal-tags">
+                        <!-- tags -->
+                    </div>
+
+                    <p class="text-secondary-light mb-10 text-lg leading-relaxed font-light" id="modal-desc">
+                        Detailed description of the dish goes here.
+                    </p>
+
+                    <div class="mt-auto flex gap-4">
+                        <div
+                            class="flex items-center border-2 border-border rounded-xl w-32 justify-between px-2 bg-gray-50">
+                            <button
+                                class="w-10 h-10 text-primary hover:text-secondary-hover transition-colors font-bold text-xl">-</button>
+                            <span class="font-bold text-lg">1</span>
+                            <button
+                                class="w-10 h-10 text-primary hover:text-secondary-hover transition-colors font-bold text-xl">+</button>
+                        </div>
+                        <button
+                            class="flex-1 bg-primary text-white font-bold py-4 px-6 rounded-xl hover:bg-secondary-hover transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

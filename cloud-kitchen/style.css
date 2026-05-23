@@ -1,0 +1,145 @@
+:root {
+  --primary-color: #111111;
+  --primary-hover-color: #ffffff;
+  --secondary-color: #1e293a;
+  --secondary-hover-color: #8dc59e;
+  --secondary-light-color: #777777;
+  --background-color: #f7f7f7;
+  --border-color: #e5e5e5;
+}
+
+/* Base Body styles are handled mostly by Tailwind, but adding specific rules here */
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-dark {
+  background: rgba(17, 17, 17, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Animations */
+.spin-slow {
+  animation: spin 60s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.1; transform: scale(0.6); }
+  50% { opacity: 0.3; transform: scale(0.9); }
+}
+
+/* Lenis Smooth Scrolling */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Perspective for 3D Cards */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--primary-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-hover-color);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #75a785;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Aurora Animation Effect */
+.aurora-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.aurora-bg::before, .aurora-bg::after, .aurora-inner {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: 0;
+  mix-blend-mode: normal;
+  filter: blur(60px);
+  opacity: 0.6;
+  animation: aurora-flow 25s infinite linear;
+}
+
+.aurora-bg::before {
+  background: radial-gradient(circle at 30% 30%, rgba(141, 197, 158, 0.4), transparent 40%);
+  animation-duration: 22s;
+  animation-direction: alternate;
+}
+
+.aurora-bg::after {
+  background: radial-gradient(circle at 70% 70%, rgba(100, 180, 255, 0.3), transparent 40%);
+  animation-duration: 28s;
+  animation-direction: alternate-reverse;
+}
+
+.aurora-inner {
+  background: radial-gradient(circle at 50% 50%, rgba(180, 130, 255, 0.25), transparent 50%);
+  animation-duration: 35s;
+}
+
+@keyframes aurora-flow {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(6%, -6%) rotate(120deg); }
+  66% { transform: translate(-6%, 6%) rotate(240deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}

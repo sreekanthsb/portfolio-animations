@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="mobile-menu">
+      <div class="ham">
+        <span>☰</span>
+      </div>
+
+      <ul class="main-menu">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <h2>Click the hamburger menu</h2>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+
+    <script>
+      const ham = document.querySelector(".ham");
+      const menu = document.querySelector("ul");
+      const links = menu.querySelectorAll("li");
+
+      var tl = gsap.timeline({ paused: true });
+
+      tl.to(menu, {
+        duration: 1,
+        opacity: 1,
+        height: "100vh",
+        ease: "expo.inOut",
+      });
+      tl.from(
+        links,
+        {
+          duration: 1,
+          opacity: 0,
+          y: 20,
+          stagger: 0.1,
+          ease: "expo.inOut",
+        },
+        "-=0.5",
+      );
+
+      tl.reverse();
+
+      ham.addEventListener("click", () => {
+        tl.reversed(!tl.reversed());
+      });
+    </script>
+  </body>
+</html>
